@@ -1,4 +1,4 @@
-# Email-HTML
+# Email-HTML Templates
 ## Wine & Water: A Journey through Numbers - HTML Email Template
 
 This repository contains a highly styled HTML email template designed to provide an engaging and visually appealing way to invite attendees to a unique event titled "Wine & Water: A Journey through Numbers". The template leverages modern web standards and advanced CSS techniques to create an elegant and interactive email experience.
@@ -25,7 +25,7 @@ The HTML email template is structured to deliver detailed event information in a
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/wine-water-event-template.git
+   git clone https://github.com/Shuvam-Banerji-Seal/Email-HTML/tree/main.git
    ```
 
 2. **Customization**:
