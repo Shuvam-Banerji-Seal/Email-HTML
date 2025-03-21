@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GIAN x EFAML Course</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 10px 2px rgba(66, 214, 255, 0.7); }
+            50% { box-shadow: 0 0 20px 5px rgba(66, 214, 255, 0.9); }
+            100% { box-shadow: 0 0 10px 2px rgba(66, 214, 255, 0.7); }
+        }
+        
+        @keyframes borderGlow {
+            0% { border-color: rgba(255, 89, 209, 0.7); }
+            50% { border-color: rgba(66, 214, 255, 0.9); }
+            100% { border-color: rgba(255, 89, 209, 0.7); }
+        }
+        
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px rgba(66, 214, 255, 0.7), 0 0 10px rgba(66, 214, 255, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(255, 89, 209, 0.9), 0 0 20px rgba(255, 89, 209, 0.7); }
+            100% { text-shadow: 0 0 5px rgba(66, 214, 255, 0.7), 0 0 10px rgba(66, 214, 255, 0.5); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes logoFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0f0c29;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 20px;
+            color: white;
+        }
+        
+        .slide {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #ffd24d;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(66, 214, 255, 0.5);
+            box-shadow: 0 0 15px 2px rgba(66, 214, 255, 0.5), inset 0 0 20px rgba(66, 214, 255, 0.2);
+            animation: neonPulse 4s infinite ease-in-out, borderGlow 8s infinite ease-in-out;
+        }
+        
+        .header {
+            padding: 5% 6%;
+            background: linear-gradient(135deg, rgba(10, 10, 25, 0.7), rgba(30, 30, 60, 0.5));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-bottom: 2px solid rgba(255, 89, 209, 0.7);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .title {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: clamp(18px, 3vw, 28px);
+            font-weight: 600;
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(66, 214, 255, 0.8), 0 0 20px rgba(66, 214, 255, 0.5);
+            animation: textGlow 8s infinite ease-in-out;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(14px, 2.2vw, 20px);
+            margin-top: 10px;
+            text-shadow: 0 0 8px rgba(255, 89, 209, 0.7);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .content {
+            padding: 5% 6%;
+            background: rgba(20, 20, 40, 0.3);
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+            height: calc(55% - 2px);
+            animation: fadeIn 2s ease-out;
+        }
+        
+        .speaker {
+            font-size: clamp(16px, 2.5vw, 24px);
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 8px rgba(66, 214, 255, 0.7);
+        }
+        
+        .speaker-affiliation {
+            font-size: clamp(14px, 2vw, 18px);
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3% 6%;
+            background: rgba(15, 14, 31, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(66, 214, 255, 0.5);
+            animation: fadeIn 2.5s ease-out;
+        }
+        
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 3vw, 30px);
+        }
+        
+        .logo {
+            height: clamp(30px, 6vw, 60px);
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(66, 214, 255, 0.8));
+            transition: transform 0.3s ease;
+            animation: logoFloat 3s infinite ease-in-out;
+            animation-delay: calc(var(--logo-index) * 0.5s);
+        }
+        
+        .logo:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(255, 89, 209, 0.9));
+        }
+        
+        .date {
+            font-size: clamp(14px, 2vw, 18px);
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(255, 89, 209, 0.8);
+            background: rgba(255, 89, 209, 0.2);
+            padding: 8px 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 89, 209, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            box-shadow: 0 0 10px rgba(255, 89, 209, 0.5);
+            animation: neonPulse 4s infinite ease-in-out;
+        }
+        
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 89, 209, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logos {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .content {
+                height: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .slide {
+                border-radius: 15px;
+            }
+            
+            .header, .content, .footer {
+                padding: 4% 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">GIANxEFAML | A Short Course on Supramolecular Crystallography & Soft-Oxometalates</h1>
+            <p class="subtitle">Day 1</p>
+        </div>
+        <div class="content">
+            <div class="speaker">Speaker: <span class="highlight">Dr, h.c. Kari Tapani Rissanen</span></div>
+            <div class="speaker-affiliation">(University of Jyvaskyla, Finland)</div>
+        </div>
+        <div class="footer">
+            <div class="logos">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY9H6lhzTeyqJ22f3ZacmNLDtLfI5OXB63gQ&s" alt="GIAN Logo" class="logo" style="--logo-index: 0;">
+                <img src="https://yt3.ggpht.com/5gvrIvPkJ7Fd8WFmp-zr0hfHI96BxWdJ-UYBxHukvYfi3n4Y3WY3X7CLO1g-I3B26qJ5Uc9Smw=s108-c-k-c0x00ffffff-no-rj" alt="EFAML Logo" class="logo" style="--logo-index: 1;">
+                <img src="https://www.iiserkol.ac.in/static/ss13ms110/images/IISER-K_Logo.png" alt="IISER Kolkata Logo" class="logo" style="--logo-index: 2;">
+            </div>
+            <div class="date">21/03/25</div>
+        </div>
+    </div>
+</body>
+</html>
