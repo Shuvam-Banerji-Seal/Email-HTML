@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intermission Screen – GIAN x EFAML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ------------------------------
+       RESET & BASE STYLES
+    ------------------------------- */
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      position: relative;
+      color: #ffffff;
+    }
+
+    /* ------------------------------
+       BACKGROUND ANIMATIONS
+    ------------------------------- */
+    /* Large rotating "crystal" polygons */
+    .crystal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, rgba(66,214,255,0.4), rgba(255,89,209,0.3));
+      clip-path: polygon(50% 0%, 80% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 20% 30%);
+      transform-origin: center;
+      animation: rotateCrystal 20s linear infinite alternate;
+      filter: blur(5px);
+      opacity: 0.2;
+    }
+    @keyframes rotateCrystal {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+      }
+    }
+
+    /* Smaller crystals floating about */
+    .crystal.small {
+      width: 150px;
+      height: 150px;
+      animation-duration: 25s;
+      animation-delay: 2s;
+      filter: blur(4px);
+    }
+    .crystal.tiny {
+      width: 80px;
+      height: 80px;
+      animation-duration: 30s;
+      animation-delay: 6s;
+      filter: blur(3px);
+    }
+    .crystal.offset1 {
+      top: 30%;
+      left: 20%;
+    }
+    .crystal.offset2 {
+      top: 75%;
+      left: 80%;
+    }
+    .crystal.offset3 {
+      top: 20%;
+      left: 80%;
+    }
+
+    /* Subtle particle effect via canvas */
+    #particle-canvas {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* behind the text container */
+    }
+
+    /* ------------------------------
+       TEXT CONTAINER
+    ------------------------------- */
+    .content-container {
+      position: relative;
+      z-index: 2; /* on top of everything */
+      width: 90%;
+      max-width: 900px;
+      text-align: center;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      padding: 40px 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1.5s forwards ease;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-60%) }
+      100% { opacity: 1; transform: translateY(-50%) }
+    }
+    .title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px rgba(66, 214, 255, 0.8),
+                   0 0 10px rgba(66, 214, 255, 0.6);
+    }
+    .subtitle {
+      font-size: clamp(16px, 3vw, 24px);
+      margin-bottom: 20px;
+      text-shadow: 0 0 3px rgba(255,255,255,0.5);
+    }
+    .date {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: rgba(255, 89, 209, 0.2);
+      padding: 8px 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 89, 209, 0.4);
+      font-size: clamp(14px, 2vw, 18px);
+      text-shadow: 0 0 5px rgba(255, 89, 209, 0.6);
+      animation: neonPulse 4s infinite ease-in-out;
+    }
+    @keyframes neonPulse {
+      0% {
+        box-shadow: 0 0 5px rgba(255, 89, 209, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 15px rgba(66, 214, 255, 0.6);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(255, 89, 209, 0.6);
+      }
+    }
+    .speaker-info {
+      margin-top: 20px;
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.4;
+      color: rgba(255,255,255,0.9);
+    }
+    .highlight {
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 5px rgba(66, 214, 255, 0.8);
+    }
+    .bio {
+      margin-top: 10px;
+      font-size: clamp(14px, 2vw, 18px);
+      opacity: 0.9;
+    }
+    .info-note {
+      margin-top: 30px;
+      font-size: clamp(16px, 3vw, 24px);
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 0 6px rgba(255,255,255,0.3);
+      animation: flashText 2s infinite alternate;
+    }
+    @keyframes flashText {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* ------------------------------
+       RESPONSIVE TWEAKS
+    ------------------------------- */
+    @media (max-width: 480px) {
+      .content-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Large center crystal -->
+  <div class="crystal"></div>
+  <!-- Additional crystals offset around -->
+  <div class="crystal small offset1"></div>
+  <div class="crystal tiny offset2"></div>
+  <div class="crystal small offset3"></div>
+
+  <!-- Main Content Container -->
+  <div class="content-container">
+    <h1 class="title">GIAN x EFAML</h1>
+    <h2 class="subtitle">A Short Course on Supramolecular Crystallography &amp; Soft-Oxometalates</h2>
+    <div class="date">Day 2 — 24/03/25</div>
+
+    <div class="speaker-info">
+      <div>Speaker: <span class="highlight">Dr. Soumyajit Roy</span></div>
+      <div>(Indian Institute of Science Education and Research Kolkata)</div>
+      <div class="bio">
+        Soumyajit is a leader in materials and chemical sciences, driving innovations
+        that address real-world challenges. At IISER Kolkata’s EFAML Materials Science
+        Center, his interdisciplinary approach blends fundamental research with
+        deep-tech entrepreneurship—exemplified by his team’s development of an 
+        oxygen generation device during the COVID-19 crisis—to create tangible 
+        societal value.
+      </div>
+    </div>
+    
+    <div class="info-note">
+      Session Break — We Will Be Back Shortly!
+    </div>
+  </div>
+
+  <!-- Particle Animation JavaScript -->
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 60;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1; 
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.speedY = (Math.random() - 0.5) * 1.2;
+        this.color = 'rgba(255, 255, 255, 0.8)';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // optional subtle background gradient
+      let gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(15, 12, 41, 0.15)');
+      gradient.addColorStop(1, 'rgba(36, 36, 62, 0.15)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+
+    // draw lines between close particles
+    function connectParticles() {
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          const dx = particlesArray[a].x - particlesArray[b].x;
+          const dy = particlesArray[a].y - particlesArray[b].y;
+          const distance = Math.sqrt(dx*dx + dy*dy);
+          if (distance < 80) {
+            ctx.strokeStyle = 'rgba(66,214,255,0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    // init + run
+    initParticles();
+    animate();
+  </script>
+</body>
+</html>

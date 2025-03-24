@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GIAN x EFAML | Day 2 Animated Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ----------------------
+       GENERAL & RESET
+    ------------------------- */
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      position: relative;
+    }
+
+    /* ----------------------
+       PARTICLE CANVAS
+    ------------------------- */
+    #particle-canvas {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Behind the main content */
+    }
+
+    /* ----------------------
+       CONTAINER & ANIMATIONS
+    ------------------------- */
+    .animated-container {
+      position: relative;
+      z-index: 2; /* In front of the particles */
+      width: 90%;
+      max-width: 1600px;
+      aspect-ratio: 16 / 9;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      border: 2px solid rgba(66, 214, 255, 0.4);
+      box-shadow: 0 0 15px 2px rgba(66, 214, 255, 0.3), 
+                  inset 0 0 20px rgba(66, 214, 255, 0.2);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        "header header"
+        "presentation camera";
+      gap: 20px;
+      padding: 20px;
+      animation: containerGlow 8s infinite ease-in-out;
+    }
+
+    @keyframes containerGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px 2px rgba(66, 214, 255, 0.3),
+                    inset 0 0 20px rgba(66, 214, 255, 0.2);
+        border-color: rgba(66, 214, 255, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 25px 5px rgba(255, 89, 209, 0.35),
+                    inset 0 0 30px rgba(255, 89, 209, 0.3);
+        border-color: rgba(255, 89, 209, 0.5);
+      }
+    }
+
+    /* ----------------------
+       HEADER SECTION
+    ------------------------- */
+    .header {
+      grid-area: header;
+      background: rgba(10, 10, 25, 0.6);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      border-bottom: 2px solid rgba(255, 215, 0, 0.6);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeInDown 1s ease forwards;
+    }
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .header-title {
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(66, 214, 255, 0.8),
+                   0 0 10px rgba(66, 214, 255, 0.6);
+    }
+    .header-subtitle {
+      font-size: clamp(14px, 2vw, 20px);
+      color: #e5e5e5;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+    }
+    .header-date {
+      margin-left: auto;
+      background: rgba(255, 89, 209, 0.2);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: clamp(13px, 1.5vw, 16px);
+      color: #ffffff;
+      font-weight: 500;
+      border: 1px solid rgba(255, 89, 209, 0.4);
+      text-shadow: 0 0 5px rgba(255, 89, 209, 0.8);
+      animation: neonPulse 4s infinite ease-in-out;
+    }
+    @keyframes neonPulse {
+      0% {
+        box-shadow: 0 0 5px rgba(255, 89, 209, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 15px rgba(66, 214, 255, 0.9);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(255, 89, 209, 0.7);
+      }
+    }
+
+    /* ----------------------
+       PRESENTATION SECTION
+    ------------------------- */
+    .presentation {
+      grid-area: presentation;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.3s ease forwards;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .frame-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .presentation-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 18px;
+    }
+
+    /* ----------------------
+       CAMERA SECTION
+    ------------------------- */
+    .camera-section {
+      grid-area: camera;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeInUp 1.6s ease forwards;
+    }
+    .camera-frame {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 2px solid rgba(66, 214, 255, 0.3);
+      box-shadow: 0 0 10px rgba(66, 214, 255, 0.3);
+      flex: 0 0 auto;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .camera-content {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+    }
+
+    /* 
+       SPEAKER / INFO / LOGOS 
+    */
+    .camera-info {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .speaker-picture-section {
+      display: flex;
+      gap: 14px;
+      background: rgba(10, 10, 25, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      align-items: center;
+      border-left: 3px solid rgba(241, 196, 15, 0.7);
+    }
+    .speaker-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(241, 196, 15, 0.8);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    }
+    .speaker-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .speaker-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 0 4px rgba(66, 214, 255, 0.6);
+    }
+    .speaker-affiliation {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .speaker-bio {
+      font-size: 14px;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.3;
+    }
+
+    .camera-logos {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .camera-logo {
+      height: 50px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
+      animation: floatLogos 4s infinite ease-in-out;
+    }
+    .camera-logo:hover {
+      transform: scale(1.1);
+    }
+    @keyframes floatLogos {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* ----------------------
+       RESPONSIVE
+    ------------------------- */
+    @media (max-width: 1200px) {
+      .animated-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "header"
+          "presentation"
+          "camera";
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Main Container with Grid Layout -->
+  <div class="animated-container">
+    <!-- HEADER -->
+    <div class="header">
+      <div style="display:flex; align-items: center; gap: 15px;">
+        <div>
+          <div class="header-title">
+            GIAN x EFAML | A Short Course on Supramolecular Crystallography &amp; Soft-Oxometalates
+          </div>
+          <div class="header-subtitle">Day 2</div>
+        </div>
+        <span class="header-date">24/03/25</span>
+      </div>
+    </div>
+
+    <!-- PRESENTATION FRAME -->
+    <div class="presentation">
+      <div class="frame-label">Presentation</div>
+      <div class="presentation-content">
+        PowerPoint Presentation Area (16:9)
+      </div>
+    </div>
+
+    <!-- CAMERA SECTION -->
+    <div class="camera-section">
+      <!-- Camera Frame -->
+      <div class="camera-frame">
+        <div class="frame-label">Camera</div>
+        <div class="camera-content">
+          Camera Feed (16:9)
+        </div>
+      </div>
+
+      <!-- Speaker Info and Logos -->
+      <div class="camera-info">
+        <div class="speaker-picture-section">
+          <img 
+            src="https://img1.wsimg.com/isteam/ip/9231d818-0770-444c-a642-f3a9a5fab6f0/DSC_8926.JPG/:/cr=t:23.15%25,l:0%25,w:100%25,h:33.38%25/rs=w:2480,h:1240,cg:true" 
+            class="speaker-picture"
+            alt="Speaker Picture"
+          />
+          <div class="speaker-info">
+            <div class="speaker-name">Dr. Soumyajit Roy</div>
+            <div class="speaker-affiliation">
+              Indian Institute of Science Education and Research Kolkata
+            </div>
+            <div class="speaker-bio">
+              Soumyajit is a leader in materials and chemical sciences, driving
+              innovations that address real-world challenges. At IISER Kolkata’s
+              EFAML Materials Science Center, his interdisciplinary approach blends
+              fundamental research with deep-tech entrepreneurship—exemplified by
+              his team’s development of an oxygen generation device during the
+              COVID-19 crisis—to create tangible societal value.
+            </div>
+          </div>
+        </div>
+
+        <div class="camera-logos">
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY9H6lhzTeyqJ22f3ZacmNLDtLfI5OXB63gQ&s" 
+            alt="GIAN Logo" 
+            class="camera-logo" 
+          />
+          <img 
+            src="https://yt3.ggpht.com/5gvrIvPkJ7Fd8WFmp-zr0hfHI96BxWdJ-UYBxHukvYfi3n4Y3WY3X7CLO1g-I3B26qJ5Uc9Smw=s108-c-k-c0x00ffffff-no-rj" 
+            alt="EFAML Logo" 
+            class="camera-logo"
+          />
+          <img 
+            src="https://www.iiserkol.ac.in/~deba_h76/index_files/10001.png" 
+            alt="IISER Kolkata Logo" 
+            class="camera-logo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Basic Particle Animation -->
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 60;
+
+    // Resize canvas
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 4 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.speedY = (Math.random() - 0.5) * 1.2;
+        this.color = 'rgba(255, 255, 255, 0.8)';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) {
+          this.speedX = -this.speedX;
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+          this.speedY = -this.speedY;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    // Initialize particles
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    // Animate
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Optional: create subtle gradient in background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(15,12,41, 0.15)');
+      gradient.addColorStop(1, 'rgba(36,36,62, 0.15)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+
+    // Connect nearby particles with lines
+    function connectParticles() {
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let dx = particlesArray[a].x - particlesArray[b].x;
+          let dy = particlesArray[a].y - particlesArray[b].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 80) {
+            ctx.strokeStyle = 'rgba(66,214,255,0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    // Run everything
+    initParticles();
+    animate();
+  </script>
+</body>
+</html>
