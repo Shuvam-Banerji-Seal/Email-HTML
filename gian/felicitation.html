@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Felicitation Ceremony – GIAN x EFAML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ------------------------------
+       RESET & BASE STYLES
+    ------------------------------- */
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      position: relative;
+      color: #fff;
+    }
+    
+    /* ------------------------------
+       BACKGROUND ANIMATIONS
+    ------------------------------- */
+    /* Large rotating crystal */
+    .crystal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, rgba(66,214,255,0.4), rgba(255,89,209,0.3));
+      clip-path: polygon(50% 0%, 80% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 20% 30%);
+      transform-origin: center;
+      animation: rotateCrystal 20s linear infinite alternate;
+      filter: blur(5px);
+      opacity: 0.2;
+    }
+    @keyframes rotateCrystal {
+      0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+    }
+    /* Smaller crystals */
+    .crystal.small {
+      width: 150px;
+      height: 150px;
+      animation-duration: 25s;
+      animation-delay: 2s;
+      filter: blur(4px);
+    }
+    .crystal.tiny {
+      width: 80px;
+      height: 80px;
+      animation-duration: 30s;
+      animation-delay: 6s;
+      filter: blur(3px);
+    }
+    .crystal.offset1 { top: 30%; left: 20%; }
+    .crystal.offset2 { top: 75%; left: 80%; }
+    .crystal.offset3 { top: 20%; left: 80%; }
+    
+    /* Particle canvas */
+    #particle-canvas {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    /* ------------------------------
+       CONTENT CONTAINER
+    ------------------------------- */
+    .content-container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      padding: 40px 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1.5s forwards ease;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-60%); }
+      100% { opacity: 1; transform: translateY(-50%); }
+    }
+    .title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px rgba(66,214,255,0.8),
+                   0 0 10px rgba(66,214,255,0.6);
+    }
+    .subtitle {
+      font-size: clamp(16px, 3vw, 24px);
+      margin-bottom: 20px;
+      text-shadow: 0 0 3px rgba(255,255,255,0.5);
+    }
+    .date {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: rgba(255,89,209,0.2);
+      padding: 8px 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,89,209,0.4);
+      font-size: clamp(14px, 2vw, 18px);
+      text-shadow: 0 0 5px rgba(255,89,209,0.6);
+      animation: neonPulse 4s infinite ease-in-out;
+    }
+    @keyframes neonPulse {
+      0% { box-shadow: 0 0 5px rgba(255,89,209,0.6); }
+      50% { box-shadow: 0 0 15px rgba(66,214,255,0.6); }
+      100% { box-shadow: 0 0 5px rgba(255,89,209,0.6); }
+    }
+    .message {
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 500;
+      margin-top: 20px;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 0 6px rgba(255,255,255,0.3);
+    }
+    .director {
+      margin-top: 30px;
+      font-size: clamp(16px, 3vw, 24px);
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(66,214,255,0.8);
+    }
+    .director span {
+      font-weight: 400;
+    }
+    /* Logos container */
+    .logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .logo {
+      max-height: 50px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+    }
+    
+    @media (max-width: 480px) {
+      .content-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+  
+  <!-- Crystal Animations -->
+  <div class="crystal"></div>
+  <div class="crystal small offset1"></div>
+  <div class="crystal tiny offset2"></div>
+  <div class="crystal small offset3"></div>
+  
+  <!-- Main Content Container -->
+  <div class="content-container">
+    <h1 class="title">Felicitation Ceremony</h1>
+    <h2 class="subtitle">Honouring our Distinguished Guest</h2>
+    <div class="date">Dr. Kari Tapani Rissanen</div>
+    <div class="message">
+      It is our privilege to celebrate and honor the invaluable contributions of Dr. Kari Tapani Rissanen,
+      whose visionary work has enriched our scientific community.
+    </div>
+    <div class="director">
+      Felicitated by the current Director of IISER Kolkata: <span>Dr. Sunil Kumar Khare</span>
+    </div>
+    
+    <!-- Logos Section -->
+    <div class="logos">
+      <img src="https://www.iiserkol.ac.in/~deba_h76/index_files/10001.png" alt="IISER Kolkata Logo" class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY9H6lhzTeyqJ22f3ZacmNLDtLfI5OXB63gQ&s" alt="GIAN Logo" class="logo">
+      <img src="https://yt3.ggpht.com/5gvrIvPkJ7Fd8WFmp-zr0hfHI96BxWdJ-UYBxHukvYfi3n4Y3WY3X7CLO1g-I3B26qJ5Uc9Smw=s108-c-k-c0x00ffffff-no-rj" alt="EFAML Lab Logo" class="logo">
+    </div>
+    
+    <div class="message" style="margin-top: 20px;">
+      Your dedication and achievements continue to inspire us all.
+    </div>
+  </div>
+  
+  <!-- Particle Animation Script -->
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 60;
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.speedY = (Math.random() - 0.5) * 1.2;
+        this.color = 'rgba(255, 255, 255, 0.8)';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+    
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(15,12,41,0.15)');
+      gradient.addColorStop(1, 'rgba(36,36,62,0.15)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+    
+    function connectParticles() {
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          const dx = particlesArray[a].x - particlesArray[b].x;
+          const dy = particlesArray[a].y - particlesArray[b].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 80) {
+            ctx.strokeStyle = 'rgba(66,214,255,0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    
+    initParticles();
+    animate();
+  </script>
+</body>
+</html>
