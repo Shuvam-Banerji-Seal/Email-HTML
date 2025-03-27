@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gian-2025 Group Slides</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      overflow: hidden;
+      color: #fff;
+    }
+    /* 16:9 Glassmorphic Container */
+    .container {
+      position: relative;
+      width: 90vw;
+      max-width: 1920px;
+      aspect-ratio: 16 / 9;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Header */
+    .header {
+      text-align: center;
+      animation: fadeDown 1s ease-out;
+    }
+    .header h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      margin-bottom: 10px;
+    }
+    .header h2 {
+      font-size: 1.8em;
+      color: #0ff;
+      text-shadow: 0 0 8px #f0f, 0 0 12px #f0f;
+    }
+    /* Slide Container */
+    .slide-container {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .group {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(0, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+      display: none;
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    .group.active {
+      display: block;
+      animation: slideIn 0.8s forwards;
+    }
+    .group h3 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-decoration: underline;
+      text-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
+    }
+    .member {
+      display: flex;
+      margin-bottom: 8px;
+      padding: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      animation: fadeIn 1s ease forwards;
+    }
+    .member > div {
+      flex: 1;
+      padding: 5px;
+      font-size: 1.1em;
+      text-shadow: 0 0 2px #0ff;
+    }
+    /* Controls */
+    .controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      color: #0ff;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .controls button:hover {
+      background: rgba(0, 0, 0, 0.6);
+      transform: scale(1.05);
+    }
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+      .header h2 {
+        font-size: 1.4em;
+      }
+      .controls button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Gian-2025</h1>
+      <h2 id="group-title">Group-1</h2>
+    </div>
+    <!-- Slide Container -->
+    <div class="slide-container">
+      <!-- Group-1 -->
+      <div class="group active" id="group1">
+        <h3>Group-1</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Swagata Chakraborty</div>
+          <div>Indian Association for Cultivation of Science</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>AKASH DEY</div>
+          <div>PRESIDENCY UNIVERSITY</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>Enakshi Basak</div>
+          <div>Calcutta university</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>Anirban Kr. Maity</div>
+          <div>IISER K</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>Priyaraj Pal</div>
+          <div>IISER K</div>
+        </div>
+        <div class="member">
+          <div>06</div>
+          <div>Musfika Khatun</div>
+          <div>Miss</div>
+        </div>
+      </div>
+      <!-- Group-2 -->
+      <div class="group" id="group2">
+        <h3>Group-2</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Tiyasha Tewari</div>
+          <div>Scottish Church College, Calcutta University</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>Rimpa Haldar</div>
+          <div>IISER K</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>Poulami Pattanayak</div>
+          <div>University of Calcutta</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>SHUBHAM ROY</div>
+          <div>CALCUTTA UNIVERSITY</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>SK OSMAN GONI</div>
+          <div>Ramakrishna Mission Residential College (Autonomous)</div>
+        </div>
+      </div>
+      <!-- Group-3 -->
+      <div class="group" id="group3">
+        <h3>Group-3</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Archishman Banerjee</div>
+          <div>St.Xavier's College, (Autonomous) Kolkata</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>Aritra Das</div>
+          <div>Jadavpur University</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>RIBHU DAN</div>
+          <div>IISER KOLKATA</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>FAHIM SK</div>
+          <div>University of Kalyani</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>Palak Trilokchand Bhattad</div>
+          <div>IISER KOLKATA</div>
+        </div>
+        <div class="member">
+          <div>06</div>
+          <div>Sinchan Sahoo</div>
+          <div>University of Kolkata</div>
+        </div>
+      </div>
+      <!-- Group-4 -->
+      <div class="group" id="group4">
+        <h3>Group-4</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Trisha Chakraborty</div>
+          <div>IISER KOLKATA</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>Shubhajeet Saha</div>
+          <div>Surendranath college</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>SAHERIN MONDAL</div>
+          <div>ALIAH UNIVERSITY</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>UTTARA CHOWDHURY</div>
+          <div>DIAMOND HARBOUR WOMEN'S UNIVERSITY</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>PROCHETA DAS</div>
+          <div>CALCUTTA UNIVERSITY</div>
+        </div>
+        <div class="member">
+          <div>06</div>
+          <div>Ayantik Guha</div>
+          <div>Surendranath College</div>
+        </div>
+      </div>
+      <!-- Group-5 -->
+      <div class="group" id="group5">
+        <h3>Group-5</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Jasmine Bezboruah</div>
+          <div>IISER Kolkata</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>Kingshuk Patra</div>
+          <div>IISER KOLKATA</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>Riya Shee</div>
+          <div>Diamond Harbour University, women's</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>TRISHA ROY</div>
+          <div>Diamond Harbour University, Women's</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>Lopamudra Saha</div>
+          <div>Sister nivedita University</div>
+        </div>
+        <div class="member">
+          <div>06</div>
+          <div>Samim Aktar</div>
+          <div>IISER Kolkata</div>
+        </div>
+      </div>
+      <!-- Group-6 -->
+      <div class="group" id="group6">
+        <h3>Group-6</h3>
+        <div class="member">
+          <div>01</div>
+          <div>Disha Maity</div>
+          <div>St Xaviers College, Kolkata</div>
+        </div>
+        <div class="member">
+          <div>02</div>
+          <div>Angira Chodhuri</div>
+          <div>Student of Calcutta University</div>
+        </div>
+        <div class="member">
+          <div>03</div>
+          <div>Annesha Debnath</div>
+          <div>Sister Nivedita University</div>
+        </div>
+        <div class="member">
+          <div>04</div>
+          <div>Nurina Khatun</div>
+          <div>Aligarh Muslim University</div>
+        </div>
+        <div class="member">
+          <div>05</div>
+          <div>Khokan Manna</div>
+          <div>IISER K</div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prev-btn">Previous</button>
+      <button id="next-btn">Next</button>
+      <button id="toggle-auto">Start Slideshow</button>
+    </div>
+  </div>
+  
+  <script>
+    // JavaScript for slide navigation and auto slideshow
+    let currentIndex = 0;
+    const groups = document.querySelectorAll('.group');
+    const groupTitle = document.getElementById('group-title');
+    const totalGroups = groups.length;
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const toggleAutoBtn = document.getElementById('toggle-auto');
+    let autoSlideInterval = null;
+    let autoSlide = false;
+    
+    // Function to show group by index with animation
+    function showGroup(index) {
+      // Remove active class from current slide
+      groups[currentIndex].classList.remove('active');
+      // Update index
+      currentIndex = index;
+      // Add active class to new slide
+      groups[currentIndex].classList.add('active');
+      // Update header title based on the group's h3 text
+      groupTitle.textContent = groups[currentIndex].querySelector('h3').textContent;
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      let newIndex = (currentIndex - 1 + totalGroups) % totalGroups;
+      showGroup(newIndex);
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      let newIndex = (currentIndex + 1) % totalGroups;
+      showGroup(newIndex);
+    });
+    
+    toggleAutoBtn.addEventListener('click', () => {
+      if(autoSlide) {
+        clearInterval(autoSlideInterval);
+        autoSlide = false;
+        toggleAutoBtn.textContent = "Start Slideshow";
+      } else {
+        autoSlideInterval = setInterval(() => {
+          let newIndex = (currentIndex + 1) % totalGroups;
+          showGroup(newIndex);
+        }, 10000); // 10 seconds per slide
+        autoSlide = true;
+        toggleAutoBtn.textContent = "Stop Slideshow";
+      }
+    });
+  </script>
+</body>
+</html>
