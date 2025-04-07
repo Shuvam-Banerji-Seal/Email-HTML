@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Signature</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    /* Basic styles - some email clients might ignore this block, hence inline styles are primary */
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      /* Ensures body doesn't add unwanted margins */
+      margin: 0; 
+      padding: 0; 
+    }
+    a { 
+      color: #0056b3; /* A modern blue link color */
+      text-decoration: none; 
+    }
+    /* Ensure paragraph margins are handled */
+    p { 
+      margin: 0; 
+    } 
+  </style>
+</head>
+<body style="margin: 0; padding: 0;"> 
+  <table border="0" cellpadding="0" cellspacing="0" style="
+      width: auto; /* Allow table to size naturally */
+      
+      /* --- Glassmorphism Simulation & Background --- */
+      /* Fallback solid light blue-grey background */
+      background-color: #eaf2f8; 
+      /* Subtle particle pattern background image */
+      background-image: url('https://www.transparenttextures.com/patterns/subtle-dots.png'); 
+      /* Light border for 'glass edge' effect - uses rgba for slight transparency */
+      border: 1px solid rgba(255, 255, 255, 0.6); 
+      /* Rounded corners */
+      border-radius: 10px; 
+      /* Increased padding for spacing */
+      padding: 20px; 
+      /* Soft shadow for depth (limited email client support) */
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
+      
+      /* --- Experimental: backdrop-filter --- */
+      /* This property is VERY poorly supported in email clients. */
+      /* It's included for the few clients that might render it (e.g., Apple Mail) */
+      /* Do NOT rely on this effect being visible to most recipients. */
+      -webkit-backdrop-filter: blur(4px); 
+      backdrop-filter: blur(4px); 
+      
+      /* --- Typography & Layout --- */
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      font-size: 10pt; 
+      /* Darker text for better contrast on the textured background */
+      color: #212529; 
+      /* Slightly increased line height for readability */
+      line-height: 1.6; 
+    ">
+    <tr>
+      <td style="vertical-align: top; padding-right: 20px; width: 60px;">
+        <a href="https://www.iiserkol.ac.in" target="_blank" title="IISER Kolkata Website">
+          <img src="https://www.iiserkol.ac.in/~deba_h76/index_files/10001.png" height="60" style="border: 0; height: 60px; width: auto; display: block;" alt="IISER Kolkata Logo">
+        </a>
+      </td>
+      
+      <td style="vertical-align: top;">
+        <p style="margin: 0 0 3px 0; font-weight: 600; /* Semi-bold */ font-size: 11.5pt; color: #1a1a1a;">Shuvam Banerji Seal</p>
+        <p style="margin: 0;">3rd Year BS-MS Student</p>
+        <p style="margin: 0;">Department of Chemical Sciences</p>
+        <p style="margin: 0;">Indian Institute of Science Education and Research (IISER) Kolkata</p>
+        <p style="margin: 0; margin-bottom: 10px; font-size: 9pt; color: #495057; /* Slightly muted grey */">Mohanpur, Nadia, West Bengal, India</p>
+        
+        <p style="margin: 0;">
+          <a href="mailto:sbs22ms076@iiserkol.ac.in" style="color: #0056b3; text-decoration: none; font-weight: 500;">sbs22ms076@iiserkol.ac.in</a>
+        </p>
+        
+        <p style="margin: 10px 0 0 0;">
+          <a href="https://www.linkedin.com/in/mastersbs/" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 15px; display: inline-block; vertical-align: middle; font-weight: 500;">
+            <img src="https://cdn-icons-png.flaticon.com/16/174/174857.png" width="16" height="16" style="vertical-align: middle; border: 0; margin-right: 5px;" alt="LinkedIn">LinkedIn
+          </a>
+          <a href="https://shuvam-banerji-seal.github.io" target="_blank" style="color: #0056b3; text-decoration: none; display: inline-block; vertical-align: middle; font-weight: 500;">
+            <img src="https://cdn-icons-png.flaticon.com/16/81/81999.png" width="16" height="16" style="vertical-align: middle; border: 0; margin-right: 5px;" alt="Website">Website
+          </a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
