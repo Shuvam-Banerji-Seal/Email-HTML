@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sustainability and AI: Powering the Future</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 50%, #fff5ee 100%);
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15), 0 2px 8px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.banner {
+  background: linear-gradient(135deg, rgba(8, 8, 8, 0.8), rgba(36, 107, 23, 0.8), rgba(0, 0, 0, 0.8));
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  animation: float 6s infinite ease-in-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin: 0;
+  font-weight: 700;
+}
+
+.banner h2 {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  margin: 15px 0 0 0;
+  font-weight: 500;
+}
+
+.collaboration-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.collaboration-logos img {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px;
+}
+
+.collaboration-x {
+  font-size: 2rem;
+  color: #0000006f;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+
+.content p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #34495e;
+  text-shadow: none;
+  animation: fadeIn 2s;
+}
+
+.event-update {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(230, 126, 34, 0.1));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  border-left: 5px solid #e74c3c;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.event-update h2 {
+  font-size: 1.4rem;
+  color: #c0392b;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.event-update p {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.what-to-expect {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.what-to-expect h2 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.what-to-expect ul {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #34495e;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.what-to-expect li {
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.quote {
+  background-color: rgba(155, 89, 182, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.quote p {
+  font-style: italic;
+  color: #8e44ad;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.speaker-note {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  border-left: 5px solid #27ae60;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.speaker-note h2 {
+  font-size: 1.4rem;
+  color: #27ae60;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.speaker-note p {
+  color: #2c3e50;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.event-details {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(183, 0, 255, 0.8));
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.event-details h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.event-details h3 {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 12px 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  font-weight: 500;
+}
+
+.speaker-section {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.speaker-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer p {
+  color: #2c3e50;
+  font-size: 0.85rem;
+  margin: 12px 0;
+}
+
+.footer p:last-child {
+  color: #7f8c8d;
+  font-size: 0.75rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .banner h1 { font-size: 1.6rem; }
+  .banner h2 { font-size: 1rem; }
+
+  .collaboration-logos {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .collaboration-logos img {
+    height: 55px;
+  }
+
+  .collaboration-x {
+    font-size: 1.5rem;
+    transform: rotate(90deg);
+  }
+
+  .content h2 { font-size: 1.3rem; }
+  .content p { font-size: 0.9rem; }
+
+  .what-to-expect h2 { font-size: 1.3rem; }
+  .what-to-expect ul { font-size: 0.9rem; }
+
+  .quote p { font-size: 1rem; }
+
+  .event-details h2 { font-size: 1.4rem; }
+  .event-details h3 { font-size: 1.1rem; }
+
+  .speaker-section img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .footer p { font-size: 0.8rem; }
+  .footer p:last-child { font-size: 0.7rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="banner">
+    <h1>🌱 Sustainability and AI: Powering the Future 💻</h1>
+    <h2>A Joint Initiative by Valence Club & Slashdot Programming Club</h2>
+  </div>
+
+  <div class="collaboration-logos">
+    <img src="https://raw.githubusercontent.com/ValenceClub/Email-Assets/refs/heads/main/logos/valence_email_logo.png" alt="Valence Club Logo" onerror="this.style.display='none';">
+    <span class="collaboration-x">✕</span>
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20B-01.png" alt="Slashdot Club Logo" onerror="this.style.display='none';">
+  </div>
+
+  <div class="event-update">
+    <h2>📅 Event Schedule Update</h2>
+    <p><strong>Important:</strong> The event has been rescheduled from Friday to <strong>Monday, 22nd September at 7:00 PM i.e. TODAY!!!</strong>. Thank you for your understanding!</p>
+  </div>
+
+  <div class="content">
+    <h2>The Digital Revolution's Hidden Environmental Cost</h2>
+    <p>🔋 As artificial intelligence reshapes our world, have you ever wondered about the massive energy footprint behind every ChatGPT query or image generation? Join us for an interdisciplinary exploration of one of the most pressing challenges of our digital age—the environmental impact of AI development and deployment.</p>
+    <p>This talk brings together perspectives from chemistry, computer science, and sustainability studies to examine how we can balance technological advancement with environmental responsibility. Whether you're fascinated by the chemistry of battery technology, curious about algorithm optimization, or passionate about sustainable development, this session has something for you!</p>
+  </div>
+  
+  <div class="what-to-expect">
+    <h2>What We'll Explore Together:</h2>
+    <ul>
+      <li>⚡ <strong>The Scale of the Problem:</strong> Quantifying the energy demand of training large AI models and putting it in perspective</li>
+      <li>🌍 <strong>Global Energy Mapping:</strong> Where are major data centers located and what powers them?</li>
+      <li>💧 <strong>Beyond Energy:</strong> Water consumption, hardware manufacturing costs, and the full environmental picture</li>
+      <li>🔬 <strong>Chemistry's Role:</strong> How green chemistry can contribute to sustainable computing materials</li>
+      <li>🚀 <strong>The Path Forward:</strong> Energy-efficient algorithms, renewable energy integration, and innovative solutions</li>
+    </ul>
+  </div>
+
+  <div class="speaker-note">
+    <h2>🎯 A Note from the Speaker</h2>
+    <p>"This session is designed as a bridge-building exercise. My goal is to help our tech-savvy audience truly appreciate the environmental consequences of our digital innovations, while also helping environmental activists understand the complexities and possibilities within technology. It's a trial to see if we can create meaningful dialogue between these two vital communities."</p>
+  </div>
+  
+  <div class="quote">
+    <p>"The future belongs to those who understand that true innovation means creating technology that enhances both human potential and planetary health."</p>
+  </div>
+  
+  <div class="event-details">
+    <h2>🗓 <strong>Monday, 22nd September - 7:00 PM</strong></h2>
+    <h3>Following the Meet & Greet Session</h3>
+    <h3>Location: <strong>Asima Chatterjee Auditorium,</strong> TRC, IISER Kolkata</h3>
+  </div>
+
+  <div class="content">
+    <h2>Who Should Attend?</h2>
+    <p>📚 This talk is particularly important for students from <strong>CH5103: Sustainability Course</strong> and <strong>MS Sustainability degree program</strong>, as it directly connects to your coursework on industrial production and environmental impact assessment. The session will provide valuable insights for your academic projects and research.</p>
+    <p>🎯 We also welcome all members of both Valence and Slashdot clubs, and anyone curious about the intersection of technology and environmental science. No prior expertise required—just bring your curiosity and readiness to engage with one of the defining challenges of our time!</p>
+  </div>
+
+  <div class="speaker-section">
+    <img src="https://media.licdn.com/dms/image/v2/C5603AQH3S-zwSpoQ2A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1634143790627?e=2147483647&v=beta&t=k4hXqfnzS1Tkh6LC5p5iplKuWjKMn8apPS_3m--5PT4" alt="Shuvam Banerji Seal">
+    <h2>Speaker: Shuvam Banerji Seal</h2>
+    <p><strong>4th Year, Department of Chemical Sciences (22MS)</strong></p>
+    <p>Shuvam Banerji Seal is a 4th-year student at the Department of Chemical Sciences, IISER Kolkata, and will be leading the discussion on sustainability and AI.</p>
+  </div>
+  
+  <div class="footer">
+    <div class="collaboration-logos">
+      <img src="https://raw.githubusercontent.com/ValenceClub/Email-Assets/refs/heads/main/logos/valence_email_logo.png" alt="Valence Club Logo" onerror="this.style.display='none';">
+      <span class="collaboration-x">✕</span>
+      <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20B-01.png" alt="Slashdot Club Logo" onerror="this.style.display='none';">
+    </div>
+    
+    <p>A collaborative initiative by <strong>Valence Club</strong> & <strong>Slashdot Programming Club</strong></p>
+    <p>© 2025 Valence Club & Slashdot Programming Club, IISER Kolkata. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>

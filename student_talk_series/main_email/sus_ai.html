@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sustainability and AI: Powering the Future</title>
+<style>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: rgba(25, 10, 50, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.banner {
+  background: linear-gradient(45deg, #2d064c,#8209d8, #0a061f, #8209d8, #2d064c);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: float 6s infinite ease-in-out;
+}
+
+.banner h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.banner h2 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 4px 8px rgb(0, 0, 0);
+  margin: 12px 0 0 0;
+}
+
+.content {
+  background-color: rgba(30, 15, 60, 0.95);
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: inset 0 2px 15px rgba(255, 255, 255, 0.1);
+  padding: 25px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #baa5e0;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.content p {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63);
+  animation: fadeIn 2s;
+}
+
+.what-to-expect {
+  background: linear-gradient(135deg, rgba(74, 0, 130, 0.4), rgba(128, 0, 128, 0.4));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.what-to-expect h2 {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.what-to-expect ul {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.quote {
+  background-color: rgba(74, 0, 130, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.quote p {
+  font-style: italic;
+  color: #b19cd9;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.event-details {
+  background: linear-gradient(135deg, #4a0082 0%, #800080 100%);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.event-details h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.event-details h3 {
+  font-size: 1.2rem;
+  color: #d4af37;
+  margin: 12px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- MODIFICATION FOR EMAIL COMPATIBILITY --- */
+.collaboration-logos {
+  text-align: center; /* Use text-align for robust centering */
+  margin: 20px 0;
+}
+
+.collaboration-logos img, .collaboration-logos .collaboration-x {
+  display: inline-block; /* Align items on the same line */
+  vertical-align: middle; /* Vertically center the logos and the 'x' */
+}
+
+.collaboration-logos img {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+/* --- END MODIFICATION --- */
+
+
+.collaboration-logos img:nth-child(3) {
+  height: 70px;
+  transform: scale(1.1);
+}
+
+.collaboration-x {
+  font-size: 2rem;
+  color: #d4af37;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  margin: 0 15px; /* Add margin to replace the 'gap' property */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(40, 20, 80, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.footer img {
+  width: 240px;
+  height: 54px;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.footer .logo-fallback {
+  width: 240px;
+  height: 54px;
+  margin: 0 auto 12px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.footer p {
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 12px 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.footer p:last-child {
+  color: #b19cd9;
+  font-size: 0.7rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: perspective(1000px) rotateX(2deg) translateY(0px); }
+  50% { transform: perspective(1000px) rotateX(2deg) translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .banner h1 { font-size: 1.6rem; }
+  .banner h2 { font-size: 1rem; }
+
+  .content h2 { font-size: 1.2rem; }
+  .content p { font-size: 0.8rem; }
+
+  .what-to-expect h2 { font-size: 1.2rem; }
+  .what-to-expect ul { font-size: 0.8rem; }
+
+  .quote p { font-size: 0.8rem; }
+
+  .event-details h2 { font-size: 1.2rem; }
+  .event-details h3 { font-size: 1rem; }
+  
+  .collaboration-logos img {
+    height: 50px;
+  }
+
+  .collaboration-logos img:nth-child(3) {
+    height: 60px;
+    transform: scale(1.1);
+  }
+
+  .collaboration-x {
+    font-size: 1.5rem;
+  }
+
+  .footer img { width: 200px; height: 45px; }
+  .footer .logo-fallback { width: 200px; height: 45px; font-size: 1rem; }
+  .footer p { font-size: 0.7rem; }
+  .footer p:last-child { font-size: 0.6rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="banner">
+    <h1>🌱 Sustainability and AI: Powering the Future 💻</h1>
+    <h2>A Joint Initiative by Valence Club & Slashdot Programming Club</h2>
+  </div>
+
+  <div class="collaboration-logos">
+    <img src="https://raw.githubusercontent.com/ValenceClub/Email-Assets/refs/heads/main/logos/valence_email_logo.png" alt="Valence Club Logo" onerror="this.style.display='none';">
+    <span class="collaboration-x">✕</span>
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo" onerror="this.style.display='none';">
+  </div>
+
+
+
+  <div class="content">
+    <h2>The Digital Revolution's Hidden Environmental Cost</h2>
+    <p>🔋 As artificial intelligence reshapes our world, have you ever wondered about the massive energy footprint behind every ChatGPT query or image generation? Join us for an interdisciplinary exploration of one of the most pressing challenges of our digital age—the environmental impact of AI development and deployment.</p>
+    <p>This talk brings together perspectives from chemistry, computer science, and sustainability studies to examine how we can balance technological advancement with environmental responsibility. Whether you're fascinated by the chemistry of battery technology, curious about algorithm optimization, or passionate about sustainable development, this session has something for you!</p>
+  </div>
+  
+  <div class="what-to-expect">
+    <h2>What We'll Explore Together:</h2>
+    <ul>
+      <li>⚡ <strong>The Scale of the Problem:</strong> Quantifying the energy demand of training large AI models and putting it in perspective</li>
+      <li>🌍 <strong>Global Energy Mapping:</strong> Where are major data centers located and what powers them?</li>
+      <li>💧 <strong>Beyond Energy:</strong> Water consumption, hardware manufacturing costs, and the full environmental picture</li>
+      <li>🔬 <strong>Chemistry's Role:</strong> How green chemistry can contribute to sustainable computing materials</li>
+      <li>🚀 <strong>The Path Forward:</strong> Energy-efficient algorithms, renewable energy integration, and innovative solutions</li>
+    </ul>
+  </div>
+  
+  <div class="quote">
+    <p>"The future belongs to those who understand that true innovation means creating technology that enhances both human potential and planetary health."</p>
+  </div>
+  
+  <div class="event-details">
+    <h2>🗓 <strong>19th September (Friday), 7:00 PM</strong></h2>
+    <h3>Following the Meet & Greet Session</h3>
+    <h3>Location: <strong>Asima Chatterjee Auditorium,</strong> TRC, IISER Kolkata</h3>
+  </div>
+
+  <div class="content">
+    <h2>Who Should Attend?</h2>
+    <p>📚 This talk is particularly important for students from <strong>CH5103: Sustainability Course</strong> and <strong>MS Sustainability degree program</strong>, as it directly connects to your coursework on industrial production and environmental impact assessment. The session will provide valuable insights for your academic projects and research.</p>
+    <p>🎯 We also welcome all members of both Valence and Slashdot clubs, and anyone curious about the intersection of technology and environmental science. No prior expertise required—just bring your curiosity and readiness to engage with one of the defining challenges of our time!</p>
+  </div>
+    <!-- Speaker Section -->
+  <div class="content" style="text-align: center;">
+    <img src="https://media.licdn.com/dms/image/v2/C5603AQH3S-zwSpoQ2A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1634143790627?e=2147483647&v=beta&t=k4hXqfnzS1Tkh6LC5p5iplKuWjKMn8apPS_3m--5PT4" alt="Shuvam Banerji Seal" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+    <h2>Speaker: Shuvam Banerji Seal</h2>
+    <p><strong>4th Year, Department of Chemical Sciences (22MS)</strong></p>
+    
+    <p>Shuvam Banerji Seal is a 4th-year student at the Department of Chemical Sciences, IISER Kolkata, and will be leading the discussion on sustainability and AI.</p>
+  </div>
+  
+  <div class="footer">
+    <div class="collaboration-logos">
+      <img src="https://raw.githubusercontent.com/ValenceClub/Email-Assets/refs/heads/main/logos/valence_email_logo.png" alt="Valence Club Logo" onerror="this.style.display='none';">
+      <span class="collaboration-x">✕</span>
+      <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo" onerror="this.style.display='none';">
+    </div>
+    
+    <p>A collaborative initiative by <strong>Valence Club</strong> & <strong>Slashdot Programming Club</strong></p>
+    <p>© 2025 Valence Club & Slashdot Programming Club, IISER Kolkata. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>
