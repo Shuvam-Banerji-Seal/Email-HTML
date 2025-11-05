@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Qiskit Fall Fest 2025 - Second Edition</title>
+<style>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: rgba(25, 10, 50, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.banner {
+  background: linear-gradient(45deg, #2d064c,#8209d8, #0a061f, #8209d8, #2d064c);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: float 6s infinite ease-in-out;
+}
+
+.banner h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.banner h2 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 4px 8px rgb(0, 0, 0);
+  margin: 12px 0 0 0;
+}
+
+.content {
+  background-color: rgba(30, 15, 60, 0.95);
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: inset 0 2px 15px rgba(255, 255, 255, 0.1);
+  padding: 25px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #baa5e0;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.content p {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63);
+  animation: fadeIn 2s;
+}
+
+.what-to-expect {
+  background: linear-gradient(135deg, rgba(74, 0, 130, 0.4), rgba(128, 0, 128, 0.4));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.what-to-expect h2 {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.what-to-expect ul {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.quote {
+  background-color: rgba(74, 0, 130, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.quote p {
+  font-style: italic;
+  color: #b19cd9;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.event-details {
+  background: linear-gradient(135deg, #4a0082 0%, #800080 100%);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.event-details h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.event-details h3 {
+  font-size: 1.2rem;
+  color: #d4af37;
+  margin: 12px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- MODIFICATION FOR EMAIL COMPATIBILITY --- */
+.collaboration-logos {
+  text-align: center; /* Use text-align for robust centering */
+  margin: 20px 0;
+}
+
+.collaboration-logos img, .collaboration-logos .collaboration-x {
+  display: inline-block; /* Align items on the same line */
+  vertical-align: middle; /* Vertically center the logos and the 'x' */
+}
+
+.collaboration-logos img {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+/* --- END MODIFICATION --- */
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(40, 20, 80, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.footer img {
+  width: 240px;
+  height: 54px;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.footer .logo-fallback {
+  width: 240px;
+  height: 54px;
+  margin: 0 auto 12px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.footer p {
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 12px 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.footer p:last-child {
+  color: #b19cd9;
+  font-size: 0.7rem;
+}
+
+.organizers {
+  background-color: rgba(30, 15, 60, 0.95);
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 25px;
+}
+
+.organizer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.organizer-card {
+  background-color: rgba(74, 0, 130, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  max-width: 200px;
+}
+
+.organizer-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.organizer-info h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.position, .department {
+  color: #b19cd9;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.social-links a {
+  color: #d4af37;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: perspective(1000px) rotateX(2deg) translateY(0px); }
+  50% { transform: perspective(1000px) rotateX(2deg) translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .banner h1 { font-size: 1.6rem; }
+  .banner h2 { font-size: 1rem; }
+
+  .content h2 { font-size: 1.2rem; }
+  .content p { font-size: 0.8rem; }
+
+  .what-to-expect h2 { font-size: 1.2rem; }
+  .what-to-expect ul { font-size: 0.8rem; }
+
+  .quote p { font-size: 0.8rem; }
+
+  .event-details h2 { font-size: 1.2rem; }
+  .event-details h3 { font-size: 1rem; }
+  
+  .collaboration-logos img {
+    height: 50px;
+  }
+
+  .footer img { width: 200px; height: 45px; }
+  .footer .logo-fallback { width: 200px; height: 45px; font-size: 1rem; }
+  .footer p { font-size: 0.7rem; }
+  .footer p:last-child { font-size: 0.6rem; }
+
+  .organizer-grid {
+    gap: 15px;
+  }
+
+  .organizer-card {
+    max-width: 150px;
+  }
+
+  .organizer-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="banner">
+    <h1>🚀 IBM Qiskit Fall Fest 2025: Second Edition 🌟</h1>
+    <h2>Unlocking the Quantum Future at IISER Kolkata</h2>
+  </div>
+
+  <div class="collaboration-logos">
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo" style="max-width: 100%; height: auto;" onerror="this.style.display='none';">
+  </div>
+
+  <div class="content">
+    <h2>Welcome to the Second Edition!</h2>
+    <p>Dear All,<br>We're absolutely delighted to announce the Second Edition of IBM Qiskit Fall Fest 2025 at IISER Kolkata. After an incredible first edition, we're returning with an even more enriching experience that will open doors to one of the most revolutionary fields in science and technology.</p>
+    <p><strong>Special Highlight - IBM Expert Speaker! 🎤</strong><br>We're honoured to host a speaker from IBM who will share cutting-edge insights from the industry's leading quantum computing platform. This is your chance to learn directly from the pioneers shaping quantum technology!</p>
+  </div>
+  
+  <div class="what-to-expect">
+    <h2>What You'll Experience:</h2>
+    <ul>
+      <li>💻 Set up your quantum programming environment (Linux & Windows)</li>
+      <li>🔬 Build strong foundations: qubits, quantum gates, and circuits</li>
+      <li>🌌 Unlock the mysteries of quantum entanglement and teleportation</li>
+      <li>🛡️ Dive into Quantum Error Correction (QEC) techniques</li>
+      <li>⚡ Explore advanced quantum diagonalisation methods</li>
+    </ul>
+  </div>
+  
+  <div class="event-details">
+    <h2>🗓 Event Details</h2>
+    <h3>Day 0: 24th October (9:30 - 11:30 PM)</h3>
+    <h3>Day 1: 25th October (2 - 5:30 PM)</h3>
+    <h3>Day 2: 26th October (2 - 5:30 PM)</h3>
+    <h3>📍 Venue: MN Saha Auditorium, IISER Kolkata</h3>
+    <h3>💻 What to Bring: Your laptop and extension cables for hands-on sessions</h3>
+  </div>
+
+  <div class="content">
+    <h2>Who Can Participate?</h2>
+    <p>This event welcomes all BS-MS students (1st to 5th year), Master's students, integrated PhD students, and research scholars. No matter what year you're in or what your specialisation is – if you're curious about quantum computing, this event is for you!</p>
+    
+    <h2>Prerequisites:</h2>
+    <p>Just basic Python knowledge, and Quantum Mechanics!<br>Don't worry if you haven't studied quantum mechanics – everything that is required will be taught from the ground up through engaging presentations and interactive sessions.</p>
+    
+    <h2>Exciting Opportunities:</h2>
+    <ul>
+      <li>🤝 Collaborate on quantum projects with fellow enthusiasts</li>
+      <li>🏆 Earn official IBM Qiskit certification to boost your profile</li>
+      <li>💡 Tackle Quantum Coding challenges</li>
+      <li>📓 Hands-on learning through interactive Jupyter notebooks</li>
+    </ul>
+    
+    <p><strong>NOTE:</strong> Please check your email regularly for schedule updates and important announcements.</p>
+    
+    <p>For complete details, speaker information, schedule, and updates: <a href="https://slashdot-iiserk.github.io/qiskit_fallfest/index.html" style="color: #d4af37;">https://slashdot-iiserk.github.io/qiskit_fallfest/index.html</a></p>
+    
+    <p>Register today and be part of this extraordinary learning experience! <a href="https://slashdot-iiserk.github.io/qiskit_fallfest/registration.html" style="color: #d4af37;">Register here</a></p>
+    
+    <p>We can't wait to welcome you to Qiskit Fall Fest 2025!</p>
+    
+    <p>Warm regards,<br>Qiskit Fall Fest 2025 Organising Team<br>IISER Kolkata</p>
+  </div>
+  
+  <div class="organizers">
+    <h2>Meet the Organizers</h2>
+    <div class="organizer-grid">
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/pradeep.jpg" alt="Pradeep Ramesh">
+        </div>
+        <div class="organizer-info">
+          <h3>Pradeep Ramesh</h3>
+          <p class="position">Lead Organizer</p>
+          <p class="department">Department of Physical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/pradeep-ramesh">🔗</a>
+            <a href="https://github.com/Pradeep-Ramesh">💻</a>
+            <a href="mailto:rp21ms106@iiserkol.ac.in">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/manish_behera.jpg" alt="Manish Behera">
+        </div>
+        <div class="organizer-info">
+          <h3>Manish Behera</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Physical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/manish-b-ehera/">🔗</a>
+            <a href="https://github.com/xeylenol">💻</a>
+            <a href="mailto:mb23ms121@iiserkol.ac.in">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/abhishek_tatavarthy.jpg" alt="Tatavarthy Abhishek">
+        </div>
+        <div class="organizer-info">
+          <h3>Tatavarthy Abhishek</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Chemical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/abhishek-tatavarthy-95a943380/">🔗</a>
+            <a href="https://github.com/Abhishektatavarthy">💻</a>
+            <a href="mailto:ta23ms163@iiserkol.ac.in">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/srivalli.jpg" alt="Srivalli Dharmarajula">
+        </div>
+        <div class="organizer-info">
+          <h3>Srivalli Dharmarajula</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Physical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/srivalli-dharmarajula-467a81344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">🔗</a>
+            <a href="https://github.com/srivallidharmarajula">💻</a>
+            <a href="mailto:dharmarajulasrivalli@gmail.com">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/shuvam_banerji_seal.jpg" alt="Shuvam Banerjee Seal">
+        </div>
+        <div class="organizer-info">
+          <h3>Shuvam Banerjee Seal</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Chemical Sciences</p>
+          <div class="social-links">
+            <a href="mailto:sbs22ms076@iiserkol.ac.in">✉️</a>
+            <a href="https://github.com/Shuvam-Banerji-Seal">💻</a>
+            <a href="https://www.linkedin.com/in/mastersbs">🔗</a>
+            <a href="https://shuvam-banerji-seal.github.io">🌐</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/sriharsha.jpg" alt="Potharaju Deva Sriharsha">
+        </div>
+        <div class="organizer-info">
+          <h3>Potharaju Deva Sriharsha</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Physical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/potharaju-deva-sriharsha-994361283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">🔗</a>
+            <a href="https://github.com/Sriharsha-13">💻</a>
+            <a href="mailto:potharajudevasriharsha13@gmail.com">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/anuprovo_debnath.jpg" alt="Anuprovo Debnath">
+        </div>
+        <div class="organizer-info">
+          <h3>Anuprovo Debnath</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Department of Physical Sciences</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/anuprovo-debnath">🔗</a>
+            <a href="#">💻</a>
+            <a href="mailto:ad23ms110@iiserkol.ac.in">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-image">
+          <img src="../assets/qiskit_images/abhinav_dhingra.jpg" alt="Abhinav Dhingra">
+        </div>
+        <div class="organizer-info">
+          <h3>Abhinav Dhingra</h3>
+          <p class="position">Co-Organizer</p>
+          <p class="department">Second year BS-MS Student</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/abhinav-dhingra-4456ba337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">🔗</a>
+            <a href="#">💻</a>
+            <a href="mailto:ad24ms110@iiserkol.ac.in">✉️</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo" style="max-width: 100%; height: auto;" onerror="this.style.display='none';">
+    
+    <p>Organized by <strong>Slashdot Programming Club</strong></p>
+    <p>© 2025 Slashdot Programming Club, IISER Kolkata. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>

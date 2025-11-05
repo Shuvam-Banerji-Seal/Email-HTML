@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Talk on MCMC Simulations – Slashdot Club, IISER Kolkata</title>
+<style>
+body {
+  background: radial-gradient(circle at top, #0a1a2f, #000);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 820px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgba(5, 20, 40, 0.9);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,255,255,0.15), 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.banner {
+  background: linear-gradient(135deg, #011d3a, #046d68, #011d3a);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  animation: float 6s infinite ease-in-out;
+}
+.banner h1 {
+  font-size: 2rem;
+  color: #00e6ff;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  margin: 0;
+}
+.banner h2 {
+  font-size: 1.1rem;
+  color: #ccefff;
+  margin-top: 8px;
+}
+
+.collaboration-logos {
+  text-align: center;
+  margin: 25px 0;
+}
+.collaboration-logos img {
+  height: 70px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,255,255,0.3);
+}
+
+.content {
+  background-color: rgba(0, 50, 80, 0.3);
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 25px;
+  box-shadow: inset 0 2px 12px rgba(0,255,255,0.08);
+}
+.content h2 {
+  font-size: 1.4rem;
+  color: #77e4e8;
+  margin-bottom: 15px;
+}
+.content p {
+  color: #e8f8ff;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.what-to-expect {
+  background: linear-gradient(135deg, rgba(0,80,100,0.4), rgba(0,60,90,0.4));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.what-to-expect h2 {
+  font-size: 1.4rem;
+  color: #00ffff;
+  margin-bottom: 15px;
+}
+.what-to-expect ul {
+  list-style: none;
+  padding-left: 0;
+  color: #eafcff;
+}
+.what-to-expect li::before {
+  content: "▹ ";
+  color: #00e6ff;
+}
+
+.event-details {
+  background: linear-gradient(135deg, #014c61, #002b40);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 25px;
+  box-shadow: 0 8px 32px rgba(0,255,255,0.1);
+}
+.event-details h2 {
+  color: #00e6ff;
+}
+.event-details h3 {
+  color: #aaf5ff;
+  margin: 10px 0;
+}
+
+.quote {
+  background: rgba(0,255,255,0.05);
+  border-left: 3px solid #00ffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+.quote p {
+  color: #a8e7f7;
+  font-style: italic;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  background-color: rgba(0, 20, 40, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,255,255,0.05);
+  margin-top: 25px;
+}
+.footer img {
+  width: 220px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.footer p {
+  color: #aaf5ff;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+.team {
+  text-align: center;
+  margin-top: 20px;
+}
+.team p {
+  color: #ccf6ff;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="banner">
+    <h1>📊 Special Talk on MCMC Simulations 🎯</h1>
+    <h2>Exploring the Theory, Implementation, and Research Applications</h2>
+  </div>
+
+  <div class="collaboration-logos">
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo">
+  </div>
+
+  <div class="content">
+    <h2>Dear Folks of IISER Kolkata,</h2>
+    <p>
+      The <strong>Slashdot Programming and Design Club</strong> is excited to invite you to a special session on <strong>Markov Chain Monte Carlo (MCMC) Simulations</strong> — a cornerstone technique in statistical physics, Bayesian inference, and computational research.
+    </p>
+    <p>
+      This talk will be delivered by <strong>Shibashis Mukhopadhyay</strong> (<a href="mailto:sm21ms166@iiserkol.ac.in" style="color:#00e6ff;">sm21ms166@iiserkol.ac.in</a>), a <strong>5th-year BS-MS student</strong> from the <strong>Department of Physical Sciences, IISER Kolkata</strong>.
+    </p>
+    <p>
+      In this session, Shibashis will walk us through the <em>theory behind MCMC methods</em>, explain <em>how to perform such simulations using Python</em>, and share <em>how he applied these techniques in his own research work</em>. Expect a blend of mathematical depth, coding insights, and hands-on demonstration!
+    </p>
+  </div>
+
+  <div class="what-to-expect">
+    <h2>🧠 What You’ll Learn:</h2>
+    <ul>
+      <li>Foundations of Markov Chains and Monte Carlo methods</li>
+      <li>Understanding the Metropolis-Hastings algorithm</li>
+      <li>Python implementation of simple MCMC routines</li>
+      <li>Applications of MCMC in real research problems</li>
+      <li>Interactive code walk-through and discussion</li>
+    </ul>
+  </div>
+
+  <div class="event-details">
+    <h2>🗓 Event Details</h2>
+    <h3>Date: <strong>Saturday, 8th November 2025</strong></h3>
+    <h3>Time: <strong>3:00 PM – 4:00 PM</strong></h3>
+    <h3>Venue: <strong>Asima Chatterjee Auditorium, TRC 2nd Floor</strong></h3>
+    <h3>Organized by: <strong>Slashdot Programming and Design Club</strong></h3>
+  </div>
+
+  <div class="quote">
+    <p>“Sampling the impossible — one Markov chain at a time.”</p>
+  </div>
+
+  <div class="content">
+    <p>
+      Whether you’re into computational physics, machine learning, or data-driven research, this talk will give you a solid understanding of one of the most versatile simulation tools in modern science.
+    </p>
+    <p>
+      Bring your curiosity — and optionally, your laptop if you’d like to follow along the code demo.
+    </p>
+    <p>
+      🔗 <strong>All are welcome!</strong> Don’t miss this opportunity to explore how mathematics meets computation in research practice.
+    </p>
+
+    <div class="team">
+      <p><strong>Regards,</strong><br>Team Slashdot</p>
+      <p><em>Slashdot: The Coding and Designing Club</em><br>Indian Institute of Science Education and Research Kolkata</p>
+      <p>
+        Shuvam Banerji Seal (<a href="mailto:sbs22ms076@iiserkol.ac.in" style="color:#00e6ff;">sbs22ms076@iiserkol.ac.in</a>)<br>
+        Anuprovo Debnath (<a href="mailto:ad23ms110@iiserkol.ac.in" style="color:#00e6ff;">ad23ms110@iiserkol.ac.in</a>)<br>
+        Abhinav Dhingra (<a href="mailto:ad24ms110@iiserkol.ac.in" style="color:#00e6ff;">ad24ms110@iiserkol.ac.in</a>)
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Club Logo">
+    <p>Organized by <strong>Slashdot Programming and Design Club</strong></p>
+    <p>© 2025 Slashdot Club, IISER Kolkata. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>
