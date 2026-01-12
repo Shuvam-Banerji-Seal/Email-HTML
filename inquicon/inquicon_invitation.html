@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inquicon 2026: The Ultimate Anime Captcha Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a12;
+        font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #ffffff;
+    }
+
+    .wrapper {
+        width: 100%;
+        background-color: #0a0a12;
+        padding: 20px 0;
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: #161625;
+        background: linear-gradient(180deg, #161625 0%, #0a0a12 100%);
+        border-radius: 24px;
+        border: 1px solid rgba(0, 242, 255, 0.2);
+        overflow: hidden;
+    }
+
+    .header {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #000000;
+        background: linear-gradient(45deg, #000000, #1a1a2e);
+        position: relative;
+        border-bottom: 2px solid #00f2ff;
+    }
+
+    .collaboration-banner {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0, 242, 255, 0.2);
+        display: inline-block;
+    }
+
+    .header h1 {
+        font-family: 'Syncopate', sans-serif;
+        font-size: 28px;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #00f2ff; /* Fallback */
+    }
+
+    .logo-divider {
+        font-size: 32px;
+        color: #ffffff;
+        font-weight: bold;
+        margin: 0 15px;
+        vertical-align: middle;
+    }
+
+    .banner-images {
+        padding: 20px;
+        text-align: center;
+        background-color: #000000;
+    }
+
+    .banner-images img {
+        width: 46%;
+        margin: 5px;
+        border-radius: 12px;
+        border: 2px solid rgba(0, 242, 255, 0.3);
+    }
+
+    .content {
+        padding: 40px 30px;
+    }
+
+    .quote {
+        font-style: italic;
+        color: #ff00ff;
+        text-align: center;
+        margin: 25px 0;
+        padding: 15px;
+        border-left: 3px solid #00f2ff;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    h2 {
+        font-family: 'Syncopate', sans-serif;
+        color: #00f2ff;
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    p {
+        line-height: 1.8;
+        font-size: 16px;
+        color: #ccd0d8;
+        margin-bottom: 20px;
+    }
+
+    .event-card {
+        background: #1a1a2e;
+        border: 1px solid rgba(0, 242, 255, 0.1);
+        border-radius: 16px;
+        padding: 25px;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .feature-item {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+        color: #ffffff;
+        font-size: 15px;
+    }
+
+    .feature-item::before {
+        content: "◈";
+        position: absolute;
+        left: 0;
+        color: #00f2ff;
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .prize-pool {
+        background: rgba(255, 0, 255, 0.1);
+        border: 2px dashed #ff00ff;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .prize-amount {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffff00;
+        font-family: 'Rajdhani', sans-serif;
+    }
+
+    .cta-container {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 20px 45px;
+        background-color: #00f2ff;
+        background: linear-gradient(45deg, #00f2ff, #0066ff);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border-radius: 50px;
+        font-family: 'Syncopate', sans-serif;
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 40px 30px;
+        text-align: center;
+        background-color: #000000;
+        border-top: 1px solid rgba(0, 242, 255, 0.2);
+    }
+
+    .footer p {
+        font-size: 13px;
+        color: #888;
+        margin: 5px 0;
+    }
+
+    .slashdot-logo {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            border-radius: 0;
+        }
+        .banner-images img {
+            width: 90%;
+            margin: 10px 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper" style="width: 100%; background-color: #0a0a12; padding: 20px 0;">
+        <div class="container" style="max-width: 650px; margin: 0 auto; background-color: #161625; background: linear-gradient(180deg, #161625 0%, #0a0a12 100%); border-radius: 24px; border: 1px solid rgba(0, 242, 255, 0.2); overflow: hidden;">
+            
+            <!-- Header section -->
+            <div class="header" style="padding: 40px 20px; text-align: center; background-color: #000000; border-bottom: 2px solid #00f2ff;">
+                <div class="collaboration-banner" style="display: inline-block; padding: 15px 25px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(0, 242, 255, 0.3); border-radius: 12px; margin-bottom: 25px;">
+                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 40px; vertical-align: middle;">
+                    <span class="logo-divider" style="color: #ffffff; font-size: 24px; margin: 0 15px; vertical-align: middle;">×</span>
+                    <span style="font-family: 'Syncopate', sans-serif; font-weight: bold; color: #ff00ff; font-size: 24px; vertical-align: middle;">INQUICON</span>
+                </div>
+                <h1 style="color: #00f2ff; font-family: 'Syncopate', sans-serif; font-size: 28px; margin: 10px 0; text-transform: uppercase; letter-spacing: 4px;">MISSION: CAPTCHA</h1>
+                <p style="color: #00f2ff; font-weight: bold; margin-top: 10px; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; font-size: 12px;">ANIME • CODE • FUTURE</p>
+            </div>
+
+            <!-- Poster section -->
+            <div class="banner-images" style="padding: 20px; text-align: center; background-color: #000000;">
+                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/1.svg" alt="Inquicon Poster 1" style="width: 45%; margin: 5px; border-radius: 8px; border: 1px solid #00f2ff;">
+                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/2.svg" alt="Inquicon Poster 2" style="width: 45%; margin: 5px; border-radius: 8px; border: 1px solid #00f2ff;">
+            </div>
+
+            <!-- Main Content -->
+            <div class="content" style="padding: 40px 30px;">
+                <div class="quote" style="font-style: italic; color: #ff00ff; text-align: center; margin: 25px 0; padding: 15px; border-left: 3px solid #00f2ff; background-color: rgba(255, 255, 255, 0.05);">
+                    "When two passionate communities unite, the possibilities are endless!"
+                </div>
+
+                <p style="color: #ccd0d8; font-size: 16px; line-height: 1.8;">Konnichiwa, IISER Kolkata!</p>
+                <p style="color: #ccd0d8; font-size: 16px; line-height: 1.8;">The <strong>Slashdot Programming Club</strong> has joined forces with <strong>Inquicon</strong>—the premier Anime event of Inquivesta—to manifest a challenge that blurs the line between digital security and anime culture!</p>
+
+                <div class="event-card" style="background-color: #1a1a2e; border: 1px solid rgba(0, 242, 255, 0.1); border-radius: 16px; padding: 25px; margin: 30px 0;">
+                    <h2 style="color: #00f2ff; font-family: 'Syncopate', sans-serif; font-size: 18px; text-transform: uppercase;">👾 MISSION: ANIME CAPTCHA</h2>
+                    <p style="color: #ccd0d8; font-size: 16px; line-height: 1.8;">Conventional security is boring. We're challenging you to design the ultimate <strong>Anime-Themed CAPTCHA</strong>—a gateway that welcomes fans but leaves bots in the dust!</p>
+                    
+                    <ul class="feature-list" style="list-style: none; padding: 0; margin: 0;">
+                        <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>The Objective:</strong> Create a creative, functional CAPTCHA implementation using anime characters, tropes, or lore.</li>
+                        <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>The Speed:</strong> It must be solvable in <strong>30 seconds or less</strong> by a true fan.</li>
+                        <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>The Tech:</strong> Use any frontend framework and host it on GitHub Pages/Vercel.</li>
+                        <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>The Focus:</strong> Creativity over complexity!</li>
+                    </ul>
+
+                    <div class="prize-pool" style="background-color: rgba(255, 0, 255, 0.1); border: 2px dashed #ff00ff; border-radius: 12px; padding: 25px; text-align: center; margin: 30px 0;">
+                        <p style="margin: 0; font-size: 14px; text-transform: uppercase; color: #ff00ff; letter-spacing: 2px; font-weight: bold;">Reward Pool</p>
+                        <div class="prize-amount" style="color: #ffff00; font-size: 36px; font-weight: bold;">₹1,500</div>
+                        <p style="margin: 5px 0 0 0; font-size: 12px; color: #ffffff;">(₹500 for each of the Top 3 Elite Developers)</p>
+                    </div>
+                </div>
+
+                <h2 style="color: #00f2ff; font-family: 'Syncopate', sans-serif; font-size: 18px; text-transform: uppercase;">📅 TIMELINE</h2>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin: 0;">
+                    <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>Submission Deadline:</strong> February 1, 2026</li>
+                    <li class="feature-item" style="color: #ffffff; margin-bottom: 12px; padding-left: 25px; position: relative;"><strong>Winners Announced:</strong> February 7, 2026</li>
+                </ul>
+
+                <div class="quote" style="font-style: italic; color: #ff00ff; text-align: center; margin: 25px 0; padding: 15px; border-left: 3px solid #00f2ff; background-color: rgba(255, 255, 255, 0.05);">
+                    "If you don't like your destiny, don't accept it. Instead, have the courage to change it the way you want it to be." — Naruto Uzumaki
+                </div>
+
+                <div class="cta-container" style="text-align: center; padding: 30px 0;">
+                    <a href="https://inquicon.github.io/events/captcha.html" class="cta-button" style="display: inline-block; padding: 20px 45px; background-color: #00f2ff; background: linear-gradient(45deg, #00f2ff, #0066ff); color: #ffffff; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; border-radius: 50px; font-family: 'Syncopate', sans-serif; font-size: 14px;">Accept the Challenge</a>
+                </div>
+
+                <p style="color: #ccd0d8; font-size: 16px; line-height: 1.8;">Are you ready to transcend your limits? Show us your unique approach to combining anime culture with security challenges!</p>
+                
+                <p style="color: #ccd0d8; font-size: 16px; line-height: 1.8;">Stay tuned,<br><strong>Slashdot x Inquicon Organising Team</strong></p>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer" style="padding: 40px 30px; text-align: center; background-color: #000000; border-top: 1px solid rgba(0, 242, 255, 0.2);">
+                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 50px; margin-bottom: 20px;">
+                <p style="color: #888888; font-size: 13px; margin: 5px 0;"><strong>Slashdot Programming Club x Inquicon 2026</strong></p>
+                <p style="color: #888888; font-size: 13px; margin: 5px 0;">IISER Kolkata Campus</p>
+                <p style="color: #888888; font-size: 13px; margin: 5px 0;">© 2026 Slashdot x Inquicon. All rights reserved.</p>
+                <div class="quote" style="border: none; background: none; font-size: 12px; opacity: 0.6; margin-top: 20px; color: #888888;">
+                    "See you in the next episode!"
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
