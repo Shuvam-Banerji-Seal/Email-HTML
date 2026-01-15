@@ -3,181 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlashTalk: Machine Learning & AI for Beginners</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Charter:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>SlashTalk: The AI & Machine Learning Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
     body {
         margin: 0;
         padding: 0;
-        background-color: #f8fafc;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        color: #1e293b;
+        background-color: #020617;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #f8fafc;
     }
 
     .wrapper {
         width: 100%;
-        background-color: #f1f5f9;
+        background-color: #020617;
         padding: 40px 0;
     }
 
     .container {
         max-width: 650px;
         margin: 0 auto;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
+        background: #0f172a;
+        background: radial-gradient(circle at top left, #1e293b 0%, #0f172a 100%);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 32px;
         overflow: hidden;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
     .header {
-        padding: 50px 40px;
-        background-color: #0f172a;
-        color: #ffffff;
+        padding: 60px 40px;
         text-align: center;
-        border-bottom: 4px solid #10b981;
+        position: relative;
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
     }
 
     .header h1 {
-        font-family: 'Charter', serif;
-        font-size: 32px;
+        font-size: 38px;
+        font-weight: 800;
         margin: 0;
-        letter-spacing: -1px;
+        background: linear-gradient(to right, #818cf8, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -1.5px;
     }
 
     .header p {
-        font-family: 'IBM Plex Mono', monospace;
-        color: #10b981;
+        font-family: 'JetBrains Mono', monospace;
+        color: #94a3b8;
         font-size: 14px;
-        margin-top: 10px;
+        margin-top: 15px;
+        letter-spacing: 1px;
     }
 
     .content {
         padding: 40px;
-        line-height: 1.65;
     }
 
     h2 {
-        font-family: 'Charter', serif;
-        color: #0f172a;
-        font-size: 22px;
-        border-bottom: 2px solid #f1f5f9;
-        padding-bottom: 10px;
-        margin-top: 30px;
-    }
-
-    .academic-note {
-        background-color: #f8fafc;
-        border-left: 4px solid #3b82f6;
-        padding: 20px;
-        margin: 25px 0;
-        font-style: italic;
-        font-family: 'Charter', serif;
-        font-size: 15px;
-        color: #475569;
-    }
-
-    .curriculum-grid {
-        margin: 25px 0;
-    }
-
-    .curriculum-item {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    .item-tag {
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 11px;
-        font-weight: bold;
-        color: #10b981;
-        text-transform: uppercase;
-    }
-
-    .item-title {
+        font-size: 24px;
         font-weight: 700;
-        font-size: 16px;
-        display: block;
-        margin: 5px 0;
+        color: #f8fafc;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
     }
 
-    .prerequisite-card {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        color: #ffffff;
-        padding: 30px;
-        border-radius: 12px;
-        margin: 35px 0;
+    h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, rgba(99, 102, 241, 0.5), transparent);
+        margin-left: 20px;
     }
 
-    .prerequisite-card h3 {
-        color: #10b981;
-        margin-top: 0;
+    .main-text {
         font-size: 18px;
+        line-height: 1.8;
+        color: #cbd5e1;
+        margin-bottom: 30px;
+    }
+
+    .event-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 30px 0;
+    }
+
+    .curriculum-block {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    .curriculum-point {
+        flex: 1;
+        padding: 0 15px;
+        border-left: 2px solid #6366f1;
+    }
+
+    .curriculum-title {
+        color: #818cf8;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .prerequisite-box {
+        background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+        border-radius: 20px;
+        padding: 35px;
+        margin: 40px 0;
+        color: #ffffff;
+    }
+
+    .prerequisite-box h3 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: 800;
     }
 
     .btn {
         display: inline-block;
-        padding: 12px 24px;
-        background-color: #10b981;
-        color: #ffffff;
+        padding: 14px 28px;
+        background: #020617;
+        color: #ffffff !important;
         text-decoration: none;
-        border-radius: 6px;
-        font-weight: 600;
+        border-radius: 12px;
+        font-weight: 700;
         font-size: 14px;
+        margin-right: 12px;
         margin-top: 15px;
+        transition: transform 0.2s ease;
+        border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .secondary-btn {
-        background-color: #334155;
-        margin-right: 10px;
+    .logistics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 30px 0;
     }
 
-    .funny-quote {
+    .logistics-item {
+        background: rgba(148, 163, 184, 0.05);
+        padding: 20px;
+        border-radius: 16px;
         text-align: center;
-        padding: 30px;
-        background-color: #f1f5f9;
-        border-radius: 8px;
-        margin-top: 40px;
     }
 
-    .funny-quote p {
-        font-family: 'IBM Plex Mono', monospace;
+    .logistics-label {
+        color: #94a3b8;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .logistics-value {
+        color: #f8fafc;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .quote-box {
+        background: rgba(16, 185, 129, 0.05);
+        border-radius: 16px;
+        padding: 25px;
+        margin-top: 50px;
+        text-align: center;
+        border: 1px dashed rgba(16, 185, 129, 0.2);
+    }
+
+    .quote-text {
+        font-family: 'JetBrains Mono', monospace;
         font-size: 13px;
-        color: #64748b;
-        margin: 0;
+        color: #34d399;
     }
 
     .footer {
-        padding: 40px;
-        background-color: #0f172a;
+        padding: 60px 40px;
+        background: #020617;
+        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
         color: #94a3b8;
-        text-align: center;
-        font-size: 13px;
-    }
-
-    .logistics {
-        background: #fff;
-        border: 1px dashed #cbd5e1;
-        padding: 20px;
-        border-radius: 8px;
-        margin: 20px 0;
-    }
-
-    .logistics p {
-        margin: 5px 0;
         font-size: 14px;
+        line-height: 1.6;
     }
 
-    .logistics strong {
-        color: #0f172a;
+    .footer-accent {
+        color: #6366f1;
+        font-weight: 700;
+        font-size: 16px;
     }
 
-    .svg-container {
-        text-align: center;
-        padding: 20px 0;
+    .svg-header-container {
+        margin: 30px 0;
+        filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.3));
+    }
+
+    @media (max-width: 600px) {
+        .logistics-grid { grid-template-columns: 1fr; }
+        .curriculum-block { flex-direction: column; }
+        .curriculum-point { margin-bottom: 20px; border-left: 2px solid #6366f1; }
     }
 </style>
 </head>
@@ -186,90 +219,146 @@
         <div class="container">
             <!-- Header -->
             <div class="header">
-                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 60px; margin-bottom: 20px;">
-                <h1>SlashTalk: Machine Learning & AI</h1>
-                <p>/* From First Principles to Large Language Models */</p>
+                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 50px; margin-bottom: 25px;">
+                <h1>SLASHTALK.AI</h1>
+                <p>/* The Beginner's Guide to Machine General Intelligence */</p>
+                
+                <div class="svg-header-container">
+                    <!-- Dynamic Glowing Neural Network SVG -->
+                    <svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Neural connections -->
+                        <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+                            <line x1="50" y1="30" x2="150" y2="40" />
+                            <line x1="50" y1="30" x2="150" y2="75" />
+                            <line x1="50" y1="30" x2="150" y2="110" />
+                            <line x1="50" y1="75" x2="150" y2="40" />
+                            <line x1="50" y1="75" x2="150" y2="75" />
+                            <line x1="50" y1="75" x2="150" y2="110" />
+                            <line x1="50" y1="120" x2="150" y2="40" />
+                            <line x1="50" y1="120" x2="150" y2="75" />
+                            <line x1="50" y1="120" x2="150" y2="110" />
+                            
+                            <line x1="150" y1="40" x2="250" y2="55" />
+                            <line x1="150" y1="40" x2="250" y2="95" />
+                            <line x1="150" y1="75" x2="250" y2="55" />
+                            <line x1="150" y1="75" x2="250" y2="95" />
+                            <line x1="150" y1="110" x2="250" y2="55" />
+                            <line x1="150" y1="110" x2="250" y2="95" />
+                            
+                            <line x1="250" y1="55" x2="350" y2="75" />
+                            <line x1="250" y1="95" x2="350" y2="75" />
+                        </g>
+
+                        <!-- Glowing Active Paths -->
+                        <g stroke="url(#grad1)" stroke-width="2" filter="url(#glow)">
+                            <path d="M 50 75 L 150 40 L 250 55 L 350 75" fill="none" opacity="0.6" stroke-dasharray="2,4" />
+                            <path d="M 50 120 L 150 110 L 250 95 L 350 75" fill="none" opacity="0.4" />
+                        </g>
+
+                        <!-- Nodes -->
+                        <!-- Input Layer -->
+                        <circle cx="50" cy="30" r="4" fill="#6366f1" />
+                        <circle cx="50" cy="75" r="5" fill="#6366f1" />
+                        <circle cx="50" cy="120" r="4" fill="#6366f1" />
+                        
+                        <!-- Hidden Layer 1 -->
+                        <circle cx="150" cy="40" r="5" fill="#818cf8" />
+                        <circle cx="150" cy="75" r="5" fill="#818cf8" />
+                        <circle cx="150" cy="110" r="5" fill="#818cf8" />
+                        
+                        <!-- Hidden Layer 2 -->
+                        <circle cx="250" cy="55" r="5" fill="#34d399" />
+                        <circle cx="250" cy="95" r="5" fill="#34d399" />
+                        
+                        <!-- Output -->
+                        <circle cx="350" cy="75" r="7" fill="#10b981" filter="url(#glow)" />
+                    </svg>
+                </div>
             </div>
 
             <!-- Content -->
             <div class="content">
-                <div class="svg-container">
-                    <!-- Custom SVG Architecture: Neural Network Motif -->
-                    <svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="20" r="8" fill="#10b981" />
-                        <circle cx="30" cy="50" r="8" fill="#10b981" />
-                        <circle cx="30" cy="80" r="8" fill="#10b981" />
-                        
-                        <circle cx="100" cy="35" r="8" fill="#3b82f6" />
-                        <circle cx="100" cy="65" r="8" fill="#3b82f6" />
-                        
-                        <circle cx="170" cy="50" r="8" fill="#f59e0b" />
-                        
-                        <!-- Connections -->
-                        <path d="M38 20 L92 35" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M38 20 L92 65" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M38 50 L92 35" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M38 50 L92 65" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M38 80 L92 35" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M38 80 L92 65" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M108 35 L162 50" stroke="#e2e8f0" stroke-width="1" />
-                        <path d="M108 65 L162 50" stroke="#e2e8f0" stroke-width="1" />
-                    </svg>
-                </div>
+                <p class="main-text">Konnichiwa, IISER Kolkata! 🧠</p>
+                <p class="main-text">We've spent months using tools built by others. Now, it's time to understand how they actually work. Join us for a deep dive into the <strong>Mathematical Soul of AI</strong>—where you stop being a user and start being a creator.</p>
 
-                <p>Hello IISER Kolkata!</p>
-                <p>Artificial Intelligence has moved from the realm of science fiction to the terminal of every programmer. Whether you want to build the next deepseek-model or just understand why your Netflix recommendations are so uncannily accurate, understanding the <strong>first principles</strong> is key.</p>
-
-                <div class="academic-note">
-                    "Artificial Intelligence is no match for natural stupidity." — <em>Common Academic Sentiment</em>
-                </div>
-
-                <h2>The Curriculum</h2>
-                <div class="curriculum-grid">
-                    <div class="curriculum-item">
-                        <span class="item-tag">Day 1</span>
-                        <span class="item-title">Foundations & Inference</span>
-                        <p style="margin: 0; font-size: 14px; color: #475569;">We begin with counting numbers and scaling up to running inferences on <strong>Large Language Models</strong>. We'll demystify classification and see how images are generated from noise.</p>
-                    </div>
-                    <div class="curriculum-item">
-                        <span class="item-tag">Day 2</span>
-                        <span class="item-title">Algorithms & Agents</span>
-                        <p style="margin: 0; font-size: 14px; color: #475569;">Dive into <strong>Boosting Algorithms</strong> (XGBoost, anyone?) and the architecture of autonomous <strong>Agents</strong>. We'll look "under the hood" at the calculus and linear algebra that makes it all work.</p>
+                <div class="event-card">
+                    <div class="curriculum-block">
+                        <div class="curriculum-point">
+                            <div class="curriculum-title">Day 1: Origins</div>
+                            <p style="margin: 0; font-size: 14px; color: #94a3b8;">Counting numbers to LLM Inference. Classifiers, Resource Mapping, and Image Generation from scratch.</p>
+                        </div>
+                        <div class="curriculum-point">
+                            <div class="curriculum-title">Day 2: The Future</div>
+                            <p style="margin: 0; font-size: 14px; color: #94a3b8;">Mastering Boosting Algorithms and building autonomous Agents that act on your behalf.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="prerequisite-card">
-                    <h3>Essential Prerequisites</h3>
-                    <p style="font-size: 14px;">Before we dive into neural networks, ensure your foundation is solid. Shuvam Banerji Seal has prepared two comprehensive tracks covering everything from <strong>Assembly</strong> and <strong>Compilers</strong> to high-level logic.</p>
-                    
-                    <div style="margin-top: 20px;">
-                        <a href="https://github.com/Shuvam-Banerji-Seal/Python-Course-for-Beginners.git" class="btn secondary-btn">Python for Beginners</a>
-                        <a href="https://github.com/Shuvam-Banerji-Seal/C-Programming-for-Beginners.git" class="btn secondary-btn">C for Beginners</a>
+                <div class="prerequisite-box">
+                    <h3>The Prerequisites</h3>
+                    <p style="font-size: 15px; opacity: 0.9;">Before we hit the GPU, verify your foundation. These tracks cover the path from **Assembly & Compilers** to the logic needed for Neural Networks.</p>
+                    <div style="margin-top: 25px;">
+                        <a href="https://github.com/Shuvam-Banerji-Seal/Python-Course-for-Beginners.git" class="btn">Learn Python</a>
+                        <a href="https://github.com/Shuvam-Banerji-Seal/C-Programming-for-Beginners.git" class="btn">Master C </a>
                     </div>
+                    <p style="font-size: 11px; margin-top: 15px; opacity: 0.7;">Curated by Shuvam Banerji Seal</p>
                 </div>
 
                 <h2>Logistics</h2>
-                <div class="logistics">
-                    <p><strong>📅 Date:</strong> 17th & 18th January 2026</p>
-                    <p><strong>⏰ Time:</strong> 1:30 PM to 5:00 PM</p>
-                    <p><strong>🏛️ Venue:</strong> Asima Chatterjee Hall</p>
+                <div class="logistics-grid">
+                    <div class="logistics-item">
+                        <div class="logistics-label">Schedule</div>
+                        <div class="logistics-value">1:30 PM — 5:00 PM</div>
+                    </div>
+                    <div class="logistics-item">
+                        <div class="logistics-label">Dates</div>
+                        <div class="logistics-value">17th & 18th Jan ‘26</div>
+                    </div>
+                    <div class="logistics-item" style="grid-column: span 2;">
+                        <div class="logistics-label">Location</div>
+                        <div class="logistics-value">Asima Chatterjee Hall</div>
+                    </div>
                 </div>
 
-                <p>We will also provide a curated list of resources to continue your journey after the sessions. Bring your curiosity (and maybe some coffee).</p>
-
-                <div class="funny-quote">
-                    <p>Overfitting: When you've memorized the answers to the exam but don't understand the subject.</p>
-                    <p style="margin-top: 10px;">Gradient Descent: The only time it's okay to feel like you're going downhill.</p>
+                <div class="quote-box">
+                    <p class="quote-text">"Artificial Intelligence is like a telescope for the mind. But like a telescope, if you don't know where to point it, you just see static."</p>
+                    <p class="quote-text" style="margin-top: 10px; font-weight: 700;">— Some academic who likely forgot to close their brackets.</p>
                 </div>
             </div>
 
             <!-- Footer -->
             <div class="footer">
-                <p>Regards,</p>
-                <p style="color: #ffffff; font-weight: 600; margin-top: 5px;">Team Slashdot</p>
-                <p>Indian Institute of Science Education and Research Kolkata</p>
-                <div style="margin-top: 20px; opacity: 0.5; font-size: 11px;">
-                    © 2026 SlashTalk. All rights reserved.
+                <div class="footer-content">
+                    <p style="margin-bottom: 25px;">
+                        <span class="footer-accent">Regards,</span><br>
+                        <span style="color: #f8fafc; font-weight: 700; font-size: 18px; letter-spacing: -0.5px;">Team Slashdot</span><br>
+                        Slashdot: The Coding and Designing Club<br>
+                        IISER Kolkata
+                    </p>
+                    
+                    <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px;">
+                        <p style="margin: 5px 0;"><strong>Shuvam Banerji Seal</strong> (<a href="mailto:sbs22ms076@iiserkol.ac.in" style="color: #818cf8; text-decoration: none;">sbs22ms076@iiserkol.ac.in</a>)</p>
+                        <p style="margin: 5px 0;"><strong>Anuprovo Debnath</strong> (<a href="mailto:ad23ms110@iiserkol.ac.in" style="color: #818cf8; text-decoration: none;">ad23ms110@iiserkol.ac.in</a>)</p>
+                        <p style="margin: 5px 0;"><strong>Abhinav Dhingra</strong> (<a href="mailto:ad24ms110@iiserkol.ac.in" style="color: #818cf8; text-decoration: none;">ad24ms110@iiserkol.ac.in</a>)</p>
+                    </div>
+                    
+                    <p style="font-size: 11px; margin-top: 40px; opacity: 0.5;">
+                        © 2026 Slashdot x IISER Kolkata. All instances of Gradient Descent are intentional.
+                    </p>
                 </div>
             </div>
         </div>
