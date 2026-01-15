@@ -42,10 +42,16 @@
         font-size: 38px;
         font-weight: 800;
         margin: 0;
-        background: linear-gradient(to right, #818cf8, #34d399);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -1.5px;
+        color: #34d399; /* Fallback for email clients */
+    }
+    
+    @supports (-webkit-background-clip: text) or (background-clip: text) {
+        .header h1 {
+            background: linear-gradient(to right, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
     }
 
     .header p {
@@ -219,74 +225,12 @@
         <div class="container">
             <!-- Header -->
             <div class="header">
-                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 50px; margin-bottom: 25px;">
+                <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 80px; margin-bottom: 25px;">
                 <h1>/.AI_Talks</h1>
-                <p>/* The Beginner's Guide to Machine General Intelligence */</p>
+                <p>The Beginner's Guide to Machine General Intelligence </p>
                 
                 <div class="svg-header-container">
-                    <!-- Dynamic Glowing Neural Network SVG -->
-                    <svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
-                            </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                                <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        
-                        <!-- Neural connections -->
-                        <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
-                            <line x1="50" y1="30" x2="150" y2="40" />
-                            <line x1="50" y1="30" x2="150" y2="75" />
-                            <line x1="50" y1="30" x2="150" y2="110" />
-                            <line x1="50" y1="75" x2="150" y2="40" />
-                            <line x1="50" y1="75" x2="150" y2="75" />
-                            <line x1="50" y1="75" x2="150" y2="110" />
-                            <line x1="50" y1="120" x2="150" y2="40" />
-                            <line x1="50" y1="120" x2="150" y2="75" />
-                            <line x1="50" y1="120" x2="150" y2="110" />
-                            
-                            <line x1="150" y1="40" x2="250" y2="55" />
-                            <line x1="150" y1="40" x2="250" y2="95" />
-                            <line x1="150" y1="75" x2="250" y2="55" />
-                            <line x1="150" y1="75" x2="250" y2="95" />
-                            <line x1="150" y1="110" x2="250" y2="55" />
-                            <line x1="150" y1="110" x2="250" y2="95" />
-                            
-                            <line x1="250" y1="55" x2="350" y2="75" />
-                            <line x1="250" y1="95" x2="350" y2="75" />
-                        </g>
-
-                        <!-- Glowing Active Paths -->
-                        <g stroke="url(#grad1)" stroke-width="2" filter="url(#glow)">
-                            <path d="M 50 75 L 150 40 L 250 55 L 350 75" fill="none" opacity="0.6" stroke-dasharray="2,4" />
-                            <path d="M 50 120 L 150 110 L 250 95 L 350 75" fill="none" opacity="0.4" />
-                        </g>
-
-                        <!-- Nodes -->
-                        <!-- Input Layer -->
-                        <circle cx="50" cy="30" r="4" fill="#6366f1" />
-                        <circle cx="50" cy="75" r="5" fill="#6366f1" />
-                        <circle cx="50" cy="120" r="4" fill="#6366f1" />
-                        
-                        <!-- Hidden Layer 1 -->
-                        <circle cx="150" cy="40" r="5" fill="#818cf8" />
-                        <circle cx="150" cy="75" r="5" fill="#818cf8" />
-                        <circle cx="150" cy="110" r="5" fill="#818cf8" />
-                        
-                        <!-- Hidden Layer 2 -->
-                        <circle cx="250" cy="55" r="5" fill="#34d399" />
-                        <circle cx="250" cy="95" r="5" fill="#34d399" />
-                        
-                        <!-- Output -->
-                        <circle cx="350" cy="75" r="7" fill="#10b981" filter="url(#glow)" />
-                    </svg>
+                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/main/student_talk_series/main_email/neural_network.svg" alt="Neural Network Architecture" style="width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto;">
                 </div>
             </div>
 
@@ -310,7 +254,7 @@
 
                 <div class="prerequisite-box">
                     <h3>The Prerequisites</h3>
-                    <p style="font-size: 15px; opacity: 0.9;">Before we hit the GPU, verify your foundation. These tracks cover the path from **Assembly & Compilers** to the logic needed for Neural Networks.</p>
+                    <p style="font-size: 15px; opacity: 0.9;">Before we hit the GPU, verify your foundation. These tracks cover the path from Assembly & Compilers to the logic needed for Neural Networks.</p>
                     <div style="margin-top: 25px;">
                         <a href="https://github.com/Shuvam-Banerji-Seal/Python-Course-for-Beginners.git" class="btn">Learn Python</a>
                         <a href="https://github.com/Shuvam-Banerji-Seal/C-Programming-for-Beginners.git" class="btn">Master C </a>
@@ -343,7 +287,7 @@
             <!-- Footer -->
             <div class="footer">
                 <div class="footer-content">
-                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 35px; opacity: 0.8; margin-bottom: 25px;">
+                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 70px; opacity: 0.8; margin-bottom: 25px;">
                     <p style="margin-bottom: 25px;">
                         <span class="footer-accent">Regards,</span><br>
                         <span style="color: #f8fafc; font-weight: 700; font-size: 18px; letter-spacing: -0.5px;">Team Slashdot</span><br>
