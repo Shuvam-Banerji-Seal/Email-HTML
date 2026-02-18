@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlashTalk: The IOCCC Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #020617;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #f1f5f9;
+    }
+
+    .wrapper {
+        width: 100%;
+        background-color: #020617;
+        padding: 40px 0;
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: #0f172a;
+        background: radial-gradient(circle at top left, #1e293b 0%, #0f172a 100%);
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .header {
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, transparent 100%);
+    }
+
+    .collaboration-banner {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        display: inline-block;
+    }
+
+    .header h1 {
+        font-size: 38px;
+        font-weight: 800;
+        margin: 10px 0;
+        color: #f97316;
+    }
+    
+    @supports (-webkit-background-clip: text) or (background-clip: text) {
+        .header h1 {
+            background: linear-gradient(to right, #f97316, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    .header p {
+        font-family: 'JetBrains Mono', monospace;
+        color: #cbd5e1;
+        font-size: 14px;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+
+    .logo-divider {
+        color: #ffffff;
+        font-size: 32px;
+        margin: 0 15px;
+        vertical-align: middle;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #f8fafc;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, rgba(249, 115, 22, 0.5), transparent);
+        margin-left: 20px;
+    }
+
+    .main-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #e2e8f0;
+        margin-bottom: 30px;
+    }
+
+    .event-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 30px 0;
+    }
+
+    .rules-block {
+        display: flex;
+        margin-bottom: 25px;
+        gap: 20px;
+    }
+
+    .rules-point {
+        flex: 1;
+        padding: 0 15px;
+        border-left: 2px solid #f97316;
+    }
+
+    .rules-title {
+        color: #fb923c;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .deadline-box {
+        background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+        border-radius: 20px;
+        padding: 35px;
+        margin: 40px 0;
+        color: #ffffff;
+    }
+
+    .deadline-box h3 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background: #020617;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 14px;
+        margin-right: 12px;
+        margin-top: 15px;
+        transition: transform 0.2s ease;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        background: #0f172a;
+    }
+
+    .winners-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .winner-item {
+        background: rgba(148, 163, 184, 0.05);
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .winner-label {
+        color: #f97316;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .quote-box {
+        background: rgba(249, 115, 22, 0.05);
+        border-radius: 16px;
+        padding: 25px;
+        margin-top: 50px;
+        text-align: center;
+        border: 1px dashed rgba(249, 115, 22, 0.2);
+    }
+
+    .quote-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: #fb923c;
+    }
+
+    .footer {
+        padding: 60px 40px;
+        background: #020617;
+        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
+        color: #cbd5e1;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-accent {
+        color: #fb923c;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    .svg-header-container {
+        margin: 30px 0;
+        filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.3));
+    }
+
+    .warning {
+        color: #fca5a5;
+        font-weight: 600;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .register-step {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+    }
+
+    .step-badge {
+        background: linear-gradient(135deg, #ea580c, #f59e0b);
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 14px;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    .step-content strong {
+        color: #f1f5f9;
+        font-size: 15px;
+    }
+
+    .step-content p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    .step-content a {
+        color: #fb923c;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .step-note {
+        background: rgba(251, 146, 60, 0.08);
+        border-left: 3px solid #fb923c;
+        border-radius: 0 8px 8px 0;
+        padding: 10px 14px;
+        margin-top: 8px;
+        font-size: 13px;
+        color: #e2e8f0;
+    }
+
+    @media (max-width: 600px) {
+        .winners-grid { grid-template-columns: 1fr; }
+        .rules-block { flex-direction: column; }
+        .rules-point { margin-bottom: 20px; border-left: 2px solid #f97316; }
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- Header with Slashdot Branding -->
+            <div class="header">
+                <div class="collaboration-banner">
+                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 70px; vertical-align: middle;">
+                    <span class="logo-divider">✕</span>
+                    <img src="https://www.ioccc.org/png/ioccc.png" alt="IOCCC Logo" style="height: 70px; vertical-align: middle; border-radius: 5px;">
+                </div>
+                <h1>IOCCC 2026</h1>
+                <p>The International Obfuscated C Code Contest</p>
+                
+                <div class="svg-header-container">
+                    <img src="https://www.ioccc.org/png/ioccc.png" alt="IOCCC Official Logo" style="width: 100%; max-width: 280px; height: auto; display: block; margin: 0 auto;">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content">
+                <p class="main-text">Greetings, IISER Kolkata Coders! 👋</p>
+                <p class="main-text"><strong>Slashdot: The Coding and Designing Club</strong> is thrilled to invite you to participate in the <strong>29th International Obfuscated C Code Contest (IOCCC29)</strong> — the world's most creative and puzzling C programming competition running since 1984!</p>
+
+                <p class="main-text">The IOCCC celebrates the most creatively obscure, wonderfully confusing, and surprisingly functional C programs. This is your chance to represent IISER Kolkata on a global stage and prove that you can write C code that's both brilliant and baffling.</p>
+
+                <h2>🎯 The Challenge</h2>
+                <p class="main-text">Write a C program that does something useful or interesting — but make it as obfuscated as possible while still compiling and running correctly. The most creative, surprising, and clever entries win.</p>
+
+                <div class="event-card">
+                    <div class="rules-block">
+                        <div class="rules-point">
+                            <div class="rules-title">Rule #1: It Must Compile</div>
+                            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">Your code must compile and run without errors using a standard C compiler (gcc, clang, etc.).</p>
+                        </div>
+                        <div class="rules-point">
+                            <div class="rules-title">Rule #2: Size Limit</div>
+                            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">Source code must be ≤ 4096 bytes. Comments and whitespace count toward the limit.</p>
+                        </div>
+                    </div>
+                    <div class="rules-block">
+                        <div class="rules-point">
+                            <div class="rules-title">Rule #3: No External Dependencies</div>
+                            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">Programs must be self-contained. No linking against unusual libraries or requiring special hardware.</p>
+                        </div>
+                        <div class="rules-point">
+                            <div class="rules-title">Rule #4: It Must Do Something</div>
+                            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">No empty or trivial programs. It should have a non-obvious purpose that's revealed when run.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deadline-box">
+                    <h3>🚨 CRITICAL DEADLINE</h3>
+                    <p style="font-size: 18px; font-weight: 700;">March 13, 2026 — 17:19:23 UTC</p>
+                    <p style="font-size: 15px; opacity: 0.9;">The IOCCC29 submission period closes at this exact time. Late submissions will not be accepted.</p>
+                    
+                    <p style="font-size: 14px; margin-top: 20px; font-weight: 600;">⏰ Timeline:</p>
+                    <ul style="font-size: 14px; opacity: 0.9; margin-left: -10px;">
+                        <li>Contest Open: Now — March 13, 2026</li>
+                        <li>Final Deadline: March 13, 2026 @ 17:19:23 UTC</li>
+                        <li>Judging Begins: Immediately after deadline</li>
+                    </ul>
+
+                    <div style="margin-top: 25px;">
+                        <a href="https://www.ioccc.org/submit.html" class="btn">Submit Your Entry</a>
+                        <a href="https://github.com/ioccc-src/mkiocccentry" class="btn">Get Submission Tools</a>
+                    </div>
+                    <p class="warning">⚠️ Multiple entries allowed, but each must be substantially different.</p>
+                </div>
+
+                <h2>🏆 Past Winners That Inspire</h2>
+                <p class="main-text">Check out what previous winners have accomplished with under 4KB of C code:</p>
+                
+                <div class="winners-grid">
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / cable1</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in bot talk — World's smallest LLM inference engine running a 7B parameter model</p>
+                    </div>
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / macke</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in imitative rebooting — OpenRISC CPU and Linux emulator</p>
+                    </div>
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / carlini</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in perfect timing — Intel 4004 emulation</p>
+                    </div>
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / cable2</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in murky waters — salmon recipe generator</p>
+                    </div>
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / tmarrec</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in cyclonic coding — 3D tornado simulation</p>
+                    </div>
+                    <div class="winner-item">
+                        <div class="winner-label">2024 / mills</div>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #cbd5e1;">Prize in ℤ₃ — Infocom v3 story interpreter</p>
+                    </div>
+                </div>
+
+                <p style="font-size: 14px; color: #cbd5e1; text-align: center;">View all 23 winners of IOCCC28 at <a href="https://www.ioccc.org/2024/" style="color: #fb923c;">ioccc.org/2024</a></p>
+
+                <h2>🎨 Classic Obfuscation Example</h2>
+                <div style="background: #1e293b; border-radius: 16px; padding: 20px; margin: 20px 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #34d399; overflow-x: auto;">
+main(_){_^448&&main(-~_);putchar(--_%64?32|-~7[__TIME__-_/8%8][">'txiZ^(~z?"-48]>>";;;====~$::199"[_*2&8|_/64]/(_&2?1:8)%8&1:10);}
+                    </p>
+                    <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">This 148-byte program prints the compilation time as ASCII art — a classic IOCCC entry that demonstrates the beauty of obfuscation.</p>
+                </div>
+
+                <h2>🤔 Judging Criteria</h2>
+                <ul style="color: #e2e8f0; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Obfuscation:</strong> How cleverly hidden is the code's functionality?</li>
+                    <li><strong>Creativity:</strong> Novel approaches and surprising techniques</li>
+                    <li><strong>Size-to-Function Ratio:</strong> Maximum functionality in minimal bytes</li>
+                    <li><strong>Humor & Surprise:</strong> Does it make judges laugh or experience an "aha!" moment?</li>
+                    <li><strong>Code Style:</strong> Yes, even obfuscated code can have artistic flair</li>
+                </ul>
+
+                <div class="quote-box">
+                    <p class="quote-text">"The IOCCC proves that C code can be both functional and incomprehensible — and that's a beautiful thing."</p>
+                    <p class="quote-text" style="margin-top: 10px; font-weight: 700;">— The IOCCC Judges</p>
+                </div>
+
+                <h2>💡 Why Participate?</h2>
+                <ul style="color: #e2e8f0; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Global Recognition:</strong> Winners are featured on the official IOCCC website and GitHub</li>
+                    <li><strong>Deepen Your C Mastery:</strong> Obfuscation requires understanding C at its deepest levels</li>
+                    <li><strong>Join an Elite Community:</strong> Past winners include some of the most creative programmers worldwide</li>
+                    <li><strong>Represent IISER Kolkata:</strong> Show the world what our coding club can do</li>
+                </ul>
+
+                <h2>📝 How to Register</h2>
+                <p class="main-text">Registration is free and required before you can submit. Follow these steps to get your submit server credentials:</p>
+
+                <div class="event-card">
+                    <div class="register-step">
+                        <div class="step-badge">A</div>
+                        <div class="step-content">
+                            <strong>Verify Contest is Open or Pending</strong>
+                            <p>The contest must be <em>pending</em> or <em>open</em> to register. IOCCC29 is currently open — you can register right now!</p>
+                        </div>
+                    </div>
+
+                    <div class="register-step">
+                        <div class="step-badge">B</div>
+                        <div class="step-content">
+                            <strong>Subscribe with Your Email</strong>
+                            <p>Visit the <a href="https://www.freelists.org/list/ioccc29-reg" target="_blank">IOCCC29 registration page</a>, enter your email address, select <strong>Subscribe</strong>, and click <strong>Next »</strong>.</p>
+                            <div class="step-note">For entries with multiple authors, only one author needs to register.</div>
+                        </div>
+                    </div>
+
+                    <div class="register-step">
+                        <div class="step-badge">C</div>
+                        <div class="step-content">
+                            <strong>Open the Subscription Consent Email</strong>
+                            <p>Check your inbox (and spam folder) for an automated email from <strong>FreeLists List Manager</strong> with subject: <em>"Subscription consent for 'ioccc29-reg'"</em>. Click the confirmation URL inside.</p>
+                        </div>
+                    </div>
+
+                    <div class="register-step">
+                        <div class="step-badge">D</div>
+                        <div class="step-content">
+                            <strong>Confirm Your Email</strong>
+                            <p>On the FreeLists page that opens, click <strong>Next »</strong> on the "Verify your email" screen.</p>
+                        </div>
+                    </div>
+
+                    <div class="register-step">
+                        <div class="step-badge">E</div>
+                        <div class="step-content">
+                            <strong>Agree to Mailing List Policies</strong>
+                            <p>Check the three boxes to confirm you've read FreeLists' Terms of Service and Privacy Policy and that you own the registered email. Then click <strong>Next »</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="register-step">
+                        <div class="step-badge">F</div>
+                        <div class="step-content">
+                            <strong>Read the Welcome Email</strong>
+                            <p>You'll receive a "Welcome to 'ioccc29-reg'" email. Once received, your registration is complete. You'll get your submit server <strong>username and initial password</strong> by email once the contest is fully open.</p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 25px;">
+                        <a href="https://www.ioccc.org/next/register.html" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #ea580c, #f59e0b); color: #ffffff; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 15px;">Register for IOCCC29 →</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 40px 0;">
+                    <a href="https://www.ioccc.org/" class="btn" style="padding: 20px 45px; font-size: 16px;">Visit IOCCC.ORG</a>
+                    <a href="https://www.ioccc.org/quick-start.html" class="btn" style="padding: 20px 45px; font-size: 16px;">Quick Start Guide</a>
+                </div>
+            </div>
+
+            <!-- Footer with Slashdot Contact Info -->
+            <div class="footer">
+                <div class="footer-content">
+                    <img src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/refs/heads/main/assets/SlashDot%20Main%20logo%20noBG%20W-01-02.png" alt="Slashdot Logo" style="height: 70px; opacity: 0.8; margin-bottom: 25px;">
+                    
+                    <p style="margin-bottom: 25px;">
+                        <span class="footer-accent">Regards,</span><br>
+                        <span style="color: #f8fafc; font-weight: 700; font-size: 18px; letter-spacing: -0.5px;">Team Slashdot</span><br>
+                        Slashdot: The Coding and Designing Club<br>
+                        IISER Kolkata
+                    </p>
+                    
+                    <p style="margin: 5px 0;"><strong>Need help with your submission? Contact us:</strong></p>
+                    <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px;">
+                        <p style="margin: 5px 0;"><strong>Shuvam Banerji Seal</strong> (<a href="mailto:sbs22ms076@iiserkol.ac.in" style="color: #f97316; text-decoration: none;">sbs22ms076@iiserkol.ac.in</a>)</p>
+                        <p style="margin: 5px 0;"><strong>Anuprovo Debnath</strong> (<a href="mailto:ad23ms110@iiserkol.ac.in" style="color: #f97316; text-decoration: none;">ad23ms110@iiserkol.ac.in</a>)</p>
+                        <p style="margin: 5px 0;"><strong>Abhinav Dhingra</strong> (<a href="mailto:ad24ms110@iiserkol.ac.in" style="color: #f97316; text-decoration: none;">ad24ms110@iiserkol.ac.in</a>)</p>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+                        <p style="margin: 2px 0;"><strong>Official IOCCC Resources:</strong></p>
+                        <p style="margin: 2px 0;">📌 <a href="https://www.ioccc.org/" style="color: #cbd5e1; text-decoration: none;">Official Website</a></p>
+                        <p style="margin: 2px 0;">📌 <a href="https://github.com/ioccc-src/winner" style="color: #cbd5e1; text-decoration: none;">Past Winners on GitHub</a></p>
+                        <p style="margin: 2px 0;">📌 <a href="https://fosstodon.org/@ioccc" style="color: #cbd5e1; text-decoration: none;">IOCCC on Mastodon</a></p>
+                    </div>
+                    
+                    <p style="font-size: 11px; margin-top: 40px; opacity: 0.6;">
+                        © 2026 Slashdot x IISER Kolkata. Proudly supporting the International Obfuscated C Code Contest since 2026.
+                    </p>
+                    <p style="font-size: 11px; opacity: 0.6;">
+                        Deadline: March 13, 2026 17:19:23 UTC — Don't miss it!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
