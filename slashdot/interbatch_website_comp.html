@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inter-Batch Website Development Competition 2026</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        /* Reset */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #0a0a0f; }
+
+        /* Responsive */
+        @media screen and (max-width: 620px) {
+            .email-container { width: 100% !important; padding: 0 12px !important; }
+            .section-card { padding: 20px 16px !important; }
+            .header-title { font-size: 22px !important; }
+            .header-subtitle { font-size: 13px !important; }
+            .section-heading { font-size: 18px !important; }
+            .sub-heading { font-size: 15px !important; }
+            .body-text { font-size: 14px !important; }
+            .timeline-table td { display: block !important; width: 100% !important; padding: 6px 0 !important; }
+            .badge { font-size: 10px !important; padding: 3px 10px !important; }
+            .hero-banner { padding: 30px 20px !important; }
+            .cta-button { padding: 14px 28px !important; font-size: 14px !important; }
+            .requirements-table { font-size: 13px !important; }
+        }
+
+        @media screen and (max-width: 420px) {
+            .header-title { font-size: 18px !important; }
+            .section-card { padding: 16px 12px !important; }
+            .body-text { font-size: 13px !important; line-height: 1.55 !important; }
+        }
+
+        /* Animations */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gradient-animated {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa, #6366f1);
+            background-size: 300% 300%;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Tables for dates */
+        .dates-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .dates-table th {
+            background: rgba(99, 102, 241, 0.2);
+            color: #e0e7ff;
+            padding: 12px 10px;
+            text-align: left;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            font-weight: 600;
+        }
+
+        .dates-table td {
+            padding: 10px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #cbd5e1;
+        }
+
+        .dates-table tr:nth-child(even) {
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        /* Bullet list styling */
+        .bullet-item {
+            display: block;
+            margin: 6px 0;
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .bullet-item:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #6366f1;
+        }
+
+        /* Tech stack items */
+        .tech-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin: 4px 4px 4px 0;
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color:#0a0a0f; font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+
+    <!-- Preheader -->
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+        Inter-Batch Website Development Competition 2026 by SlashDot - March 22 to April 11. Build creative, technically sound websites for IISER Kolkata!
+    </div>
+
+    <!-- Outer wrapper -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#0a0a0f;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+
+                <!-- Email container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%;">
+
+                    <!-- HERO BANNER -->
+                    <tr>
+                        <td class="hero-banner gradient-animated" style="
+                            background: linear-gradient(135deg, #1e1b4b, #312e81, #3730a3, #1e1b4b);
+                            background-size: 300% 300%;
+                            border-radius: 16px 16px 0 0;
+                            padding: 44px 32px 36px;
+                            text-align: center;
+                            border-bottom: 2px solid rgba(139,92,246,0.3);
+                        ">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <span style="
+                                            font-size: 13px;
+                                            font-weight: 700;
+                                            color: #a78bfa;
+                                            letter-spacing: 2px;
+                                            text-transform: uppercase;
+                                            border: 1px solid rgba(139,92,246,0.25);
+                                            padding: 8px 16px;
+                                            border-radius: 4px;
+                                            display: inline-block;
+                                        ">&lt;/.&gt; SLASHDOT</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top: 20px;">
+                                        <h1 class="header-title" style="
+                                            margin: 0;
+                                            font-size: 28px;
+                                            font-weight: 800;
+                                            color: #f1f5f9;
+                                            line-height: 1.3;
+                                            letter-spacing: -0.5px;
+                                        ">Inter-Batch Website<br>Development Competition</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top: 14px;">
+                                        <p class="header-subtitle" style="
+                                            margin: 0;
+                                            font-size: 14px;
+                                            color: #cbd5e1;
+                                            font-weight: 500;
+                                            line-height: 1.5;
+                                        ">Build the next evolution of SlashDot's digital identity<br>
+                                        March 22 – April 11, 2026</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- MAIN CTA -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="
+                                background: linear-gradient(145deg, rgba(99,102,241,0.12), rgba(139,92,246,0.06));
+                                border: 1px solid rgba(99,102,241,0.25);
+                                border-radius: 12px;
+                            ">
+                                <tr>
+                                    <td style="padding: 28px 24px; text-align:center;">
+                                        <h3 style="margin:0 0 14px; font-size:16px; font-weight:700; color:#e0e7ff;">Ready to showcase your creativity?</h3>
+                                        <p style="margin:0 0 18px; font-size:13px; color:#94a3b8; line-height:1.6;">Submit your team's entry through the official Google Form with your GitHub repository and live deployment link.</p>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td style="
+                                                    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                                                    border-radius: 6px;
+                                                    padding: 0;
+                                                ">
+                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScLOfapEJsGdtEBu8u5nQwp_8GzaQza11qx-WdK6yxzQhjAHQ/viewform" style="
+                                                        display: inline-block;
+                                                        padding: 14px 36px;
+                                                        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                                                        color: #ffffff;
+                                                        text-decoration: none;
+                                                        font-weight: 700;
+                                                        font-size: 14px;
+                                                        border-radius: 6px;
+                                                        letter-spacing: 0.5px;
+                                                    " class="cta-button">Submit Your Entry</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- OVERVIEW SECTION -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">About This Competition</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            SlashDot invites students across all batches to participate in the Inter-Batch Website Development Competition 2026. This competition focuses on visual design, programming quality, architecture, and storytelling through the web.
+                                        </p>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            Beyond the competition, this initiative serves as a blueprint for SlashDot's future. The most innovative designs, architectural patterns, and user experiences from winning entries will be integrated into <strong style="color:#e0e7ff;">the Official SlashDot Website</strong>, giving you the unique opportunity to leave a permanent mark on the club's digital heritage.
+                                        </p>
+                                        <p class="body-text" style="margin:0 0 20px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            <strong style="color:#e0e7ff;">All submitted websites and repositories will be visible to everyone</strong>, enabling community voting and fostering collaboration across batches.
+                                        </p>
+                                        <div style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); padding: 16px; border-radius: 8px; text-align: center;">
+                                            <strong style="color: #a78bfa; font-size: 18px; display: block; margin-bottom: 6px;">🏆 Total Prize Pool: INR 4,500</strong>
+                                            <strong style="color: #e0e7ff; font-size: 14px; background: rgba(99,102,241,0.2); padding: 6px 12px; border-radius: 4px; display: inline-block;">📜 Participation certificates will be given to all participants!</strong>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- PARTICIPATION GUIDELINES -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Participation Guidelines</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Participation is open to <strong>BS-MS, RS, MR, MP, and IP</strong> students.</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> RS, MR, MP, and IP fellows are encouraged to participate together as one batch.</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> For BS-MS, <strong>maximum 2 teams per batch</strong> (e.g., two teams from 25MS).</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Maximum 20 participants per team. Each team submits one project.</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> For more details, please check the <a href="https://docs.google.com/document/d/1bA8KALZPOUSVU5D9qJxFhjVUuo74THLKm__MzwdWqs8/edit?usp=sharing" style="color:#a78bfa; text-decoration:none;"><strong>detailed guidelines here</strong></a>.</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Submit entries via the official Google Form and host projects publicly on GitHub.</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- PROJECT HOSTING REQUIREMENTS -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Project Hosting Requirements</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:12px;">
+                                        <h3 class="sub-heading" style="margin:0 0 8px; font-size:15px; font-weight:600; color:#e0e7ff;">GitHub Repository</h3>
+                                        <p class="body-text" style="margin:0; font-size:13px; line-height:1.7; color:#94a3b8;">
+                                            Must include full source code, documentation, setup instructions, dependencies, and licensing information.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:12px;">
+                                        <h3 class="sub-heading" style="margin:0 0 8px; font-size:15px; font-weight:600; color:#e0e7ff;">GitHub Pages Deployment</h3>
+                                        <p class="body-text" style="margin:0; font-size:13px; line-height:1.7; color:#94a3b8;">
+                                            Live version deployed and accessible. Frontend must work fully on GitHub Pages.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3 class="sub-heading" style="margin:0 0 8px; font-size:15px; font-weight:600; color:#e0e7ff;">Backend Setup (If Required)</h3>
+                                        <p class="body-text" style="margin:0 0 8px; font-size:13px; line-height:1.7; color:#94a3b8;">
+                                            Include clear setup instructions. Recommended: single setup script, Docker/Podman config, or automated dependency setup.
+                                        </p>
+                                        <p class="body-text" style="margin:0; font-size:13px; line-height:1.7; color:#94a3b8;">
+                                            The README must allow judges to run your project with minimal setup effort.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- ALLOWED TECHNOLOGIES -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Allowed Technologies</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            <strong style="color:#e0e7ff;">No restrictions!</strong> Use any framework or technology:
+                                        </p>
+                                        <div style="margin:12px 0;">
+                                            <span class="tech-badge">HTML / CSS / Vanilla JS</span>
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Vue</span>
+                                            <span class="tech-badge">Angular</span>
+                                            <span class="tech-badge">Svelte</span>
+                                            <span class="tech-badge">Next.js</span>
+                                            <span class="tech-badge">Astro</span>
+                                            <span class="tech-badge">Three.js</span>
+                                            <span class="tech-badge">WebGL</span>
+                                            <span class="tech-badge">WebAssembly</span>
+                                            <span class="tech-badge">Game Engines</span>
+                                            <span class="tech-badge">And more...</span>
+                                        </div>
+                                        <p class="body-text" style="margin:12px 0 0; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            The emphasis is on <strong>creativity, code quality, and execution</strong>.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- WEBSITE REQUIREMENTS -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Mandatory Website Sections</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>Homepage</strong> - Clear introduction to the website's purpose</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>About/Concept Page</strong> - Explain your idea, theme, and narrative</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>Tech Stack Page</strong> - Technologies used & architecture explanation</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>Team Page</strong> - Introduce the creator(s)</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>Contact Page</strong> - Functioning contact section or information</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong>Logos & Branding</strong> - Display IISER Kolkata and SlashDot logos (high-res files will be provided)</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- THEME & CREATIVE FREEDOM -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Theme & Creative Freedom</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            You have complete creative freedom! Possible themes include:
+                                        </p>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Interactive storytelling websites</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Web-based games</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Interactive light novels</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Blogging platforms</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Personal portfolio websites</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Educational platforms</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Experimental web art</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Simulation websites</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Scientific visualizations</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Community platforms</div>
+                                        <div style="margin-top:12px; padding-top:12px; border-top:1px solid rgba(99,102,241,0.2);">
+                                            <p class="body-text" style="margin:0; font-size:13px; line-height:1.6; color:#cbd5e1;">
+                                                <strong style="color:#a78bfa;">Important:</strong> Clearly state your website's agenda and purpose in the project description and submission form.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- JUDGING CRITERIA -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Judging Criteria</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Theme & Concept</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Originality, clarity of objective, creativity & narrative</span></td></tr>
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Design & UX</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Visual aesthetics, UI quality, navigation, responsiveness</span></td></tr>
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Technical Implementation</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Code quality, architecture, modularity, maintainability</span></td></tr>
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Performance</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Loading latency, optimization, efficient asset usage</span></td></tr>
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Content & Organization</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Logical structure, documentation quality, readability</span></td></tr>
+                                            <tr><td style="padding:8px 0;"><strong style="color:#e0e7ff; font-size:13px;">Innovation</strong><br><span class="body-text" style="font-size:13px; color:#94a3b8;">Unique features, interactive elements, advanced technologies</span></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- JUDGES -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Judging Panel</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong style="color:#e0e7ff;">Dr. Dwaipayan Roy</strong> - Internal Judge, IISER Kolkata</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> <strong style="color:#e0e7ff;">External Judge</strong> - To be announced soon</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- COMMUNITY VOTING -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">Community Voting & Scoring</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            All submitted websites and repositories will be shared with the student body and faculty. A public voting process will determine the <strong>Audience Choice Award</strong>.
+                                        </p>
+                                        <div style="margin-top:12px; padding-top:12px; border-top:1px solid rgba(99,102,241,0.2);">
+                                            <p class="body-text" style="margin:0; font-size:13px; line-height:1.6; color:#cbd5e1;">
+                                                <strong>Scoring Breakdown:</strong> Average of internal and external judge scores determines the overall winners. The Audience Choice is determined entirely by public poll. The Most Innovative award is determined by a combination of judge scores and the public poll.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- IMPORTANT DATES -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 16px; font-size:20px; font-weight:700; color:#f1f5f9;">Important Dates</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="dates-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Event</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Competition Start</td>
+                                                    <td><strong>March 22, 2026</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Submission Deadline</td>
+                                                    <td><strong>April 11, 2026</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Judging Period</td>
+                                                    <td>April 12-14, 2026</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Results Announcement</td>
+                                                    <td>April 15, 2026</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- CODE OF CONDUCT -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">Code of Conduct</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> No vulgar, obscene, or offensive content</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Content must remain appropriate for academic circulation</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> No malicious code or security risks</div>
+                                        <div style="margin-top:12px; padding-top:12px; border-top:1px solid rgba(99,102,241,0.2);">
+                                            <p class="body-text" style="margin:0; font-size:13px; line-height:1.6; color:#cbd5e1;">
+                                                <strong style="color:#f1f5f9;">Violation of these rules will lead to disqualification.</strong>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- SUBMISSION CHECKLIST -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">Submission Checklist</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            Include in your Google Form submission:
+                                        </p>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Participant / Team Name</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Batch and Department</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Project Title</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> GitHub Repository Link (public)</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> GitHub Pages Website Link</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Description of the website</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Explanation of concept/theme</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Technology stack used</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Backend setup instructions (if applicable)</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- LICENSING & OPEN SOURCE -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">Licensing & Open Source</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0 0 12px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            All submissions must be <strong>open source</strong>.
+                                        </p>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Use an open-source license (MIT, Apache, GPL, etc.)</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Document dependencies clearly</div>
+                                        <div style="margin: 6px 0; color: #cbd5e1; font-size: 14px; line-height: 1.6;"><strong style="color: #6366f1; margin-right: 8px;">&bull;</strong> Ensure project reproducibility</div>
+                                        <div style="margin-top:12px; padding-top:12px; border-top:1px solid rgba(99,102,241,0.2);">
+                                            <p class="body-text" style="margin:0; font-size:13px; line-height:1.6; color:#cbd5e1;">
+                                                <strong style="color:#a78bfa;">Important:</strong> By submitting, you grant SlashDot the right to reuse, derive, and modify your work for promotional and club purposes.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- RESOURCES & REFERENCE -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="
+                                background: linear-gradient(145deg, rgba(139,92,246,0.08), rgba(139,92,246,0.03));
+                                border: 1px solid rgba(139,92,246,0.2);
+                                border-radius: 12px;
+                            ">
+                                <tr>
+                                    <td style="padding: 24px 22px;">
+                                        <h3 style="margin:0 0 12px; font-size:16px; font-weight:700; color:#e0e7ff;">Reference Repository</h3>
+                                        <p class="body-text" style="margin:0 0 16px; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            Use this repository as a base for anything you build or as a reference:
+                                        </p>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td style="
+                                                    background: rgba(139,92,246,0.15);
+                                                    border-radius: 6px;
+                                                    padding: 0;
+                                                ">
+                                                    <a href="https://github.com/Shuvam-Banerji-Seal/Inter-Batch-Website-Design-2026-" style="
+                                                        display: inline-block;
+                                                        padding: 12px 20px;
+                                                        color: #a78bfa;
+                                                        text-decoration: none;
+                                                        font-weight: 600;
+                                                        font-size: 13px;
+                                                        border-radius: 6px;
+                                                    ">View Reference Repo &rarr;</a>
+                                                </td>
+                                                <td width="16"></td>
+                                                <td style="
+                                                    background: rgba(139,92,246,0.15);
+                                                    border-radius: 6px;
+                                                    padding: 0;
+                                                ">
+                                                    <a href="https://shuvam-banerji-seal.github.io/Inter-Batch-Website-Design-2026-/" style="
+                                                        display: inline-block;
+                                                        padding: 12px 20px;
+                                                        color: #a78bfa;
+                                                        text-decoration: none;
+                                                        font-weight: 600;
+                                                        font-size: 13px;
+                                                        border-radius: 6px;
+                                                    ">View Live Preview &rarr;</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- SECOND CTA -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 28px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="
+                                background: rgba(99,102,241,0.08);
+                                border: 1px solid rgba(99,102,241,0.2);
+                                border-radius: 12px;
+                            ">
+                                <tr>
+                                    <td style="padding: 24px 22px; text-align:center;">
+                                        <h3 style="margin:0 0 14px; font-size:16px; font-weight:700; color:#e0e7ff;">Ready to showcase your project?</h3>
+                                        <p style="margin:0 0 18px; font-size:13px; color:#94a3b8; line-height:1.6;">Submit your entry before <strong>April 11, 2026</strong>. The winning designs will shape SlashDot's future!</p>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td style="background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 6px;">
+                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScLOfapEJsGdtEBu8u5nQwp_8GzaQza11qx-WdK6yxzQhjAHQ/viewform" style="
+                                                        display: inline-block;
+                                                        padding: 14px 36px;
+                                                        color: #ffffff;
+                                                        text-decoration: none;
+                                                        font-weight: 700;
+                                                        font-size: 14px;
+                                                        border-radius: 6px;
+                                                    ">Submit Your Entry Now</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- CONTACT -->
+                    <tr>
+                        <td class="section-card" style="background-color:#111119; padding: 28px 28px 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="section-heading" style="margin:0 0 14px; font-size:20px; font-weight:700; color:#f1f5f9;">Contact & Queries</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="body-text" style="margin:0; font-size:14px; line-height:1.7; color:#94a3b8;">
+                                            <strong style="color:#e0e7ff;">SlashDot</strong> - Programming & Designing Club<br>
+                                            Indian Institute of Science Education and Research Kolkata<br><br>
+                                            <strong style="color:#e0e7ff;">Current Office Bearers:</strong><br>
+                                            Shuvam Banerji Seal (<a href="mailto:sbs22ms076@iiserkol.ac.in" style="color:#a78bfa; text-decoration:none;">sbs22ms076@iiserkol.ac.in</a>)<br>
+                                            Anuprovo Debnath (<a href="mailto:ad23ms110@iiserkol.ac.in" style="color:#a78bfa; text-decoration:none;">ad23ms110@iiserkol.ac.in</a>)<br>
+                                            Abhinav Dhingra (<a href="mailto:ad24ms110@iiserkol.ac.in" style="color:#a78bfa; text-decoration:none;">ad24ms110@iiserkol.ac.in</a>)
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="background-color:#111119; padding:0 28px;">
+                            <div style="height:1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);"></div>
+                        </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td style="
+                            background: linear-gradient(180deg, #111119, #0d0d15);
+                            border-radius: 0 0 16px 16px;
+                            padding: 28px 28px 32px;
+                            text-align: center;
+                            border-top: 1px solid rgba(139,92,246,0.15);
+                        ">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin:0; font-size:13px; color:#64748b; line-height:1.6;">
+                                            <strong style="color:#cbd5e1;">SlashDot</strong> - Programming & Designing Club<br>
+                                            IISER Kolkata
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top:14px;">
+                                        <p style="margin:0; font-size:12px; color:#475569;">
+                                            Build the future of the web. Shape SlashDot's digital heritage.<br>
+                                            <span style="color:#64748b;">March 22 – April 11, 2026</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top:14px;">
+                                        <div style="font-size:12px; color:#64748b;">
+                                            All websites and repositories will be publicly visible to the community
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- End email container -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- End outer wrapper -->
+
+</body>
+</html>
