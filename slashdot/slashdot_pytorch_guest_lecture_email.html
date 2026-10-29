@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>Slashdot Guest Lecture — PyTorch, Profiling &amp; Open Source</title>
+  <style>
+    body { margin:0 !important; padding:0 !important; background-color:#f6e8d8; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+    table { border-collapse:collapse; }
+    img { border:0; display:block; line-height:100%; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
+    a { color:#c34320; }
+    @media screen and (max-width:620px) {
+      .shell { width:100% !important; }
+      .pad { padding-left:22px !important; padding-right:22px !important; }
+      .hero-title { font-size:32px !important; line-height:1.1 !important; }
+      .section-title { font-size:21px !important; }
+      .stack { display:block !important; width:100% !important; }
+      .stack-gap { padding:0 0 12px 0 !important; }
+      .event-value { font-size:17px !important; }
+      .poster-img { width:100% !important; height:auto !important; }
+      .footer-note { font-size:10px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f6e8d8;font-family:Arial,Helvetica,sans-serif;color:#32110d;">
+  <!-- Subject: Want to make PyTorch faster? Join Slashdot's guest lecture on 2 November -->
+  <!-- Preheader: Open-source contributions, GPU kernel profiling, tensors, and torch.compile with Aheli Poddar. -->
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;mso-hide:all;">
+    Curious how profiling and torch.compile can help turn a slow ML workload into a measurable optimization problem? Join Slashdot on 2 November.
+    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f6e8d8;">
+    <tr>
+      <td align="center" style="padding:26px 12px;">
+        <table role="presentation" class="shell" width="600" cellspacing="0" cellpadding="0" border="0" style="width:600px;max-width:600px;background-color:#fff5e9;border:1px solid #e7c7ad;">
+
+          <!-- masthead -->
+          <tr>
+            <td class="pad" style="padding:24px 38px 20px 38px;background-color:#3b100b;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="left" style="font-size:13px;line-height:1.3;letter-spacing:2px;font-weight:bold;color:#ffd5ad;">SLASHDOT <span style="color:#ff6b3d;">/</span> PROGRAMMING CLUB</td>
+                  <td align="right" style="font-size:11px;line-height:1.3;letter-spacing:1.5px;font-weight:bold;color:#ff8a5b;">GUEST LECTURE</td>
+                </tr>
+              </table>
+              <div style="height:18px;line-height:18px;font-size:18px;">&nbsp;</div>
+              <div style="font-size:11px;line-height:1.4;letter-spacing:2.5px;text-transform:uppercase;color:#ff8a5b;font-weight:bold;">Open source &middot; ML systems &middot; Performance</div>
+              <h1 class="hero-title" style="margin:10px 0 12px 0;font-size:42px;line-height:1.05;letter-spacing:-1px;font-weight:800;color:#fff2e3;">Want to make<br><span style="color:#ff6839;">PyTorch faster?</span></h1>
+              <p style="margin:0;font-size:17px;line-height:1.6;color:#f9dfca;">And learn how to contribute to the tools that power modern AI?</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="height:7px;background-color:#ef5a2a;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
+
+          <!-- poster -->
+          <tr>
+            <td class="pad" style="padding:26px 38px 6px 38px;" align="center">
+              <img class="poster-img" src="https://raw.githubusercontent.com/Shuvam-Banerji-Seal/Email-HTML/main/assets/Pytorch_poster_1.jpg.jpeg"
+                   width="524" alt="PyTorch Guest Lecture poster — Ms Aheli Poddar, Associate Software Engineer, PyTorch Engineering at Red Hat. 2nd Nov, 6–9 PM, Venue: Ashima."
+                   style="display:block;width:100%;max-width:524px;height:auto;border:1px solid #e7c7ad;border-radius:4px;">
+              <div style="padding-top:9px;font-size:11px;line-height:1.5;letter-spacing:1px;text-transform:uppercase;color:#a0705c;text-align:center;">The official poster &middot; Save the date</div>
+            </td>
+          </tr>
+
+          <!-- opening -->
+          <tr>
+            <td class="pad" style="padding:26px 38px 6px 38px;">
+              <div style="font-size:11px;line-height:1.4;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#c34320;">You&rsquo;re invited</div>
+              <h2 class="section-title" style="margin:8px 0 14px 0;font-size:25px;line-height:1.2;letter-spacing:-.3px;color:#3b100b;">From &ldquo;it runs&rdquo; to &ldquo;it runs well.&rdquo;</h2>
+              <p style="margin:0 0 13px 0;font-size:16px;line-height:1.7;color:#43201a;">Ever stared at a training run and wondered why it is taking so long? Or looked at a big open-source repository and thought, <em>&ldquo;Where would I even begin?&rdquo;</em></p>
+              <p style="margin:0;font-size:16px;line-height:1.7;color:#43201a;">Join <strong>Slashdot</strong> for a guest lecture with <strong>Aheli Poddar</strong>, Associate Software Engineer in PyTorch Engineering at Red Hat, for a practical look at open-source contribution and the systems work that makes ML code run better.</p>
+            </td>
+          </tr>
+
+          <!-- speaker strip -->
+          <tr>
+            <td class="pad" style="padding:16px 38px 22px 38px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f8e1cb;border-left:4px solid #ef5a2a;">
+                <tr>
+                  <td style="padding:16px 18px;">
+                    <div style="font-size:20px;line-height:1.25;font-weight:bold;color:#a62b16;">Aheli Poddar</div>
+                    <div style="padding-top:4px;font-size:13px;line-height:1.5;color:#5a2a20;">Associate Software Engineer &middot; PyTorch Engineering, Red Hat</div>
+                    <div style="padding-top:9px;font-size:12px;line-height:1.5;color:#7b4535;">PyTorch core contributions &middot; GPU kernel profiling &middot; compiler and performance tooling</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- topics -->
+          <tr>
+            <td class="pad" style="padding:0 38px 8px 38px;">
+              <div style="font-size:11px;line-height:1.4;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#c34320;">Three things worth knowing</div>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:8px;">
+                <tr>
+                  <td class="stack stack-gap" width="33.33%" valign="top" style="width:33.33%;padding:0 7px 12px 0;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f8e1cb;border-top:3px solid #ef5a2a;">
+                      <tr><td style="padding:14px 12px 15px 12px;">
+                        <div style="font-size:10px;letter-spacing:1px;font-weight:bold;color:#c34320;">01 / CONTRIBUTE</div>
+                        <div style="padding-top:8px;font-size:16px;line-height:1.3;font-weight:bold;color:#3b100b;">Open source</div>
+                        <div style="padding-top:7px;font-size:12px;line-height:1.6;color:#59352b;">Find your entry point: issues, tests, docs, and useful pull requests.</div>
+                      </td></tr>
+                    </table>
+                  </td>
+                  <td class="stack stack-gap" width="33.33%" valign="top" style="width:33.33%;padding:0 4px 12px 4px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f8e1cb;border-top:3px solid #ef5a2a;">
+                      <tr><td style="padding:14px 12px 15px 12px;">
+                        <div style="font-size:10px;letter-spacing:1px;font-weight:bold;color:#c34320;">02 / INVESTIGATE</div>
+                        <div style="padding-top:8px;font-size:16px;line-height:1.3;font-weight:bold;color:#3b100b;">Kernel profiling</div>
+                        <div style="padding-top:7px;font-size:12px;line-height:1.6;color:#59352b;">Read profiler traces, locate bottlenecks, and understand what the GPU is actually doing.</div>
+                      </td></tr>
+                    </table>
+                  </td>
+                  <td class="stack stack-gap" width="33.33%" valign="top" style="width:33.33%;padding:0 0 12px 7px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f8e1cb;border-top:3px solid #ef5a2a;">
+                      <tr><td style="padding:14px 12px 15px 12px;">
+                        <div style="font-size:10px;letter-spacing:1px;font-weight:bold;color:#c34320;">03 / OPTIMIZE</div>
+                        <div style="padding-top:8px;font-size:16px;line-height:1.3;font-weight:bold;color:#3b100b;">`torch.compile`</div>
+                        <div style="padding-top:7px;font-size:12px;line-height:1.6;color:#59352b;">Explore compilation, execution graphs, and when compiler optimizations can help.</div>
+                      </td></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- tensor callout -->
+          <tr>
+            <td class="pad" style="padding:7px 38px 20px 38px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#3b100b;">
+                <tr>
+                  <td style="padding:20px 21px 21px 21px;">
+                    <div style="font-size:11px;line-height:1.4;letter-spacing:2px;font-weight:bold;color:#ff8a5b;text-transform:uppercase;">Why tensors matter</div>
+                    <p style="margin:9px 0 0 0;font-size:16px;line-height:1.65;color:#fff2e3;">Tensor shapes, memory layouts, device placement, and operation patterns all influence the work your program performs. Connecting that mental model to real profiler traces helps you optimize with evidence&mdash;not guesswork.</p>
+                    <p style="margin:11px 0 0 0;font-size:14px;line-height:1.6;color:#ffd5ad;"><strong>The goal:</strong> find the bottleneck first, then make measured improvements. A well-chosen optimization can turn a long wait into a much shorter run&mdash;but the actual speedup depends on the workload and hardware.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- meme -->
+          <tr>
+            <td class="pad" style="padding:0 38px 26px 38px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border:1px dashed #d9a58a;background-color:#fffaf4;">
+                <tr>
+                  <td align="center" style="padding:15px 18px 16px 18px;">
+                    <div style="font-size:10px;line-height:1.4;letter-spacing:2px;font-weight:bold;color:#c34320;text-transform:uppercase;">A familiar conversation</div>
+                    <div style="padding-top:8px;font-size:16px;line-height:1.5;font-weight:bold;color:#3b100b;">You: &ldquo;Why is my training run taking forever?&rdquo;</div>
+                    <div style="padding-top:3px;font-size:15px;line-height:1.5;color:#a62b16;">The profiler: &ldquo;Have you tried looking at the evidence?&rdquo;</div>
+                    <div style="padding-top:7px;font-size:11px;line-height:1.4;color:#82574a;">Less guesswork. More useful traces.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- event details -->
+          <tr>
+            <td class="pad" style="padding:23px 38px 27px 38px;background-color:#f1d2b6;border-top:1px solid #e7b698;">
+              <div style="font-size:11px;line-height:1.4;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#a62b16;">Put it on your calendar</div>
+              <h2 class="section-title" style="margin:8px 0 17px 0;font-size:25px;line-height:1.2;color:#3b100b;">See you at Ashima.</h2>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="stack" width="50%" valign="top" style="width:50%;padding:0 10px 13px 0;">
+                    <div style="font-size:10px;line-height:1.4;letter-spacing:1.5px;font-weight:bold;color:#a62b16;">DATE</div>
+                    <div class="event-value" style="padding-top:4px;font-size:19px;line-height:1.35;font-weight:bold;color:#3b100b;">Monday, 2 November 2026</div>
+                  </td>
+                  <td class="stack" width="50%" valign="top" style="width:50%;padding:0 0 13px 10px;">
+                    <div style="font-size:10px;line-height:1.4;letter-spacing:1.5px;font-weight:bold;color:#a62b16;">TIME</div>
+                    <div class="event-value" style="padding-top:4px;font-size:19px;line-height:1.35;font-weight:bold;color:#3b100b;">6:00&ndash;9:00 PM</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding-top:2px;">
+                    <div style="font-size:10px;line-height:1.4;letter-spacing:1.5px;font-weight:bold;color:#a62b16;">VENUE</div>
+                    <div class="event-value" style="padding-top:4px;font-size:19px;line-height:1.35;font-weight:bold;color:#3b100b;">Ashima</div>
+                  </td>
+                </tr>
+              </table>
+              <div style="margin-top:20px;padding-top:15px;border-top:1px solid #dfb392;font-size:15px;line-height:1.65;color:#4a2118;">Curious about how this stuff works? Bring your questions, your slow scripts, and your open-source ambitions. No compiler wizardry required to show up.</div>
+            </td>
+          </tr>
+
+          <!-- footer -->
+          <tr>
+            <td class="pad" align="center" style="padding:22px 38px 24px 38px;background-color:#3b100b;">
+              <div style="font-size:12px;line-height:1.5;letter-spacing:2px;font-weight:bold;color:#ff8a5b;">SLASHDOT</div>
+              <div style="padding-top:6px;font-size:11px;line-height:1.6;color:#f9dfca;">Programming Club &middot; IISER Kolkata</div>
+              <div class="footer-note" style="padding-top:12px;font-size:11px;line-height:1.5;color:#d7aa91;">Open source is built by people who start somewhere.<br>Come find your starting point.</div>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
